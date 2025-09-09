@@ -3,8 +3,8 @@ import LeftImage from "../assets/images/credit.png";
 
 function BusinessCredit(props) {
   return (
-    <div className="min-h-[80vh] bg-[#00ffff] w-full -mt-[19px] py-6">
-      <div className="flex justify-between w-[85%] mx-auto  items-center">
+    <div className="min-h-[66vh] bg-[#00ffff] w-full -mt-[19px] pt-14 pb-0">
+      <div className="flex w-[85%] mx-auto items-center justify-center">
         <div className="mt-10 pl-8">
           <img
             src={LeftImage}

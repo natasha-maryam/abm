@@ -9,9 +9,14 @@ function GrowthMatrix(props) {
         backgroundSize: "cover",
       }}
     >
-        <div className="pt-[25%] text-center">
-            <p className="font-bold text-[52px] font-nunito bg-gradient-to-r from-[#B84F6A] to-[#511B29] bg-clip-text text-transparent drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)]">The Growth Matrix: Four Forces That</p>
-        </div>
+      <div className="pt-[25%] text-center">
+        <p className="font-bold text-[52px] font-nunito bg-gradient-to-r from-[#B84F6A] to-[#511B29] bg-clip-text text-transparent drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)]">
+          The Growth Matrix: Four Forces That
+        </p>
+        <p className="font-bold text-[52px] font-nunito bg-gradient-to-r from-[#B84F6A] to-[#511B29] bg-clip-text text-transparent drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)] -mt-6">
+          Define Business Success
+        </p>
+      </div>
     </div>
   );
 }

@@ -1,30 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LeftImage from "../assets/images/retention.png";
 
 function CustomerRetention(props) {
+  const [imageHeight, setImageHeight] = useState(0);
+
+  useEffect(() => {
+    const img = new Image();
+    img.onload = function () {
+      // Calculate height based on viewport width and image aspect ratio
+      const aspectRatio = this.naturalHeight / this.naturalWidth;
+      const viewportWidth = window.innerWidth;
+      setImageHeight(viewportWidth * aspectRatio);
+    };
+    img.src = "./src/assets/images/retention-bg.jpg";
+  }, []);
+
   return (
     <div
-      className="w-full min-h-[200vh] -mt-[8%]"
+      className="w-full -mt-[8%]"
       style={{
         backgroundImage: "url('./src/assets/images/retention-bg.jpg')",
-        height: "auto",
         backgroundRepeat: "no-repeat",
-          backgroundSize:'cover'
+        backgroundSize: "100% auto",
+        backgroundPosition: "center top",
+        height: imageHeight > 0 ? `${imageHeight}px` : "100vh",
+        minHeight: "400px", // Fallback minimum height
       }}
     >
-      {/* <div className="flex justify-between w-[85%] mx-auto  items-center">
-        <div className="w-[60%] items-start flex flex-col pt-4">
+      <div className="flex w-[85%] mx-auto items-center justify-center pt-[20%]">
+        <div className="items-start flex flex-col pt-4">
           <h2 className="font-medium text-[40px] font-clash text-black">
             Customer Retention
           </h2>
           <h2 className="font-medium text-[40px] font-clash text-black mb-2 -mt-1">
             The Profit Multiplier
           </h2>
-          <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[24px] leading-relaxed font-bold max-w-2xl">
-            Without strong business credit, growth hits a ceiling. Separating
-            personal and business credit is crucial for sustainable scaling.
+          <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[18px] leading-relaxed font-bold max-w-2xl">
+            Acquiring a new customer costs 5-25 times more than retaining an
+            existing one. Customer retention is the hidden engine of profitable
+            growth.
           </p>
 
+          <hr className="w-full h-[1px] bg-[#000000]/20 border-0 mb-3"/>
           <div className="mb-[14px]">
             <h3 className="font-medium text-[18px] font-clash text-black mb-[14px]">
               Why It's Critical
@@ -32,17 +49,15 @@ function CustomerRetention(props) {
             <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-bold">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                45% of small businesses fail due to inadequate financing
+              A 5% increase in customer retention can increase profits by 25-95%
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                Strong business credit can unlock 10-100x more financing than
-                personal credit
+                Loyal customers spend 67% more than new ones
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                Vendor terms and major contracts often depend on business credit
-                strength
+              Satisfied customers become brand advocates, driving free referral
               </li>
             </ul>
           </div>
@@ -54,31 +69,31 @@ function CustomerRetention(props) {
             <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-bold">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                Establish proper business credit foundations
+               Design customer journey maps that identify and eliminate pain points
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                Create strategies to build strong credit scores
+                Implement loyalty programs that reward and incentivize repeat business
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                Secure better financing terms and higher credit limits
+               Create personalized communication strategies that strengthen relationships
               </li>
               <li className="flex items-start">
                 <span className="mr-2">•</span>
-                Protect personal assets while scaling operations
+               Develop feedback systems that help you continuously improve
               </li>
             </ul>
           </div>
         </div>
-        <div className="w-[40%] mt-10 pl-8">
+        <div className="mt-10 pl-8">
           <img
             src={LeftImage}
             alt="Digital Marketing"
             className="w-[665px] h-[517px]"
           />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

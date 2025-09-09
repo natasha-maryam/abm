@@ -4,11 +4,13 @@ import LeftImage from "../assets/images/matrix-left.svg";
 function GrowthMatrix(props) {
   return (
     <div
-      className="w-full -mt-40"
+      className="w-full mt-0"
       style={{
         backgroundImage: "url('./src/assets/images/matrix-bg.png')",
         height: "auto", // define your height here
-        // backgroundRepeat:'no-repeat'
+        backgroundRepeat:'no-repeat',
+        backgroundSize:'cover',
+        backgroundPosition:'center'
       }}
     >
       <div className="pt-[21%] flex flex-col items-center">

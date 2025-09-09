@@ -7,7 +7,7 @@ import dots from "../assets/images/white-dots.svg";
 
 const HeroSection = () => (
   <div
-    className="min-h-[calc(100vh+100px)] bg-no-repeat bg-top w-full pt-8 relative z-10"
+    className="min-h-[calc(100vh+15px)] bg-no-repeat bg-top w-full pt-8 relative z-10"
     style={{
       backgroundImage: "url('./src/assets/images/hero-section.png')",
       backgroundSize: "100% calc(100% + 0px)", // Extend background to cover overlap

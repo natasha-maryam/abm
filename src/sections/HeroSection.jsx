@@ -7,23 +7,24 @@ import dots from "../assets/images/white-dots.svg";
 
 const HeroSection = () => (
   <div
-    className="min-h-[100vh] bg-no-repeat bg-center w-full pt-8"
+    className="min-h-[calc(100vh+100px)] bg-no-repeat bg-top w-full pt-8 relative z-10"
     style={{
       backgroundImage: "url('./src/assets/images/hero-section.png')",
-      backgroundSize: "100% auto",
+      backgroundSize: "100% calc(100% + 0px)", // Extend background to cover overlap
+      marginBottom: "-100px", // Overlap the next section
     }}
   >
     <Header />
-    <section className="w-[85%] mx-auto min-h-[80vh] py-14">
+    <section className="w-[85%] mx-auto min-h-[80vh] py-14 pb-32">
       {/* Three Headings in Column */}
       <div className="space-y-4 mb-8 max-w-3xl">
-        <div className="h-16 text-[52px] font-clash font-medium text-black">
+        <div className="h-14 text-[52px] font-clash font-medium text-black">
           Comprehensive
         </div>
-        <div className="h-16 text-[52px] font-clash font-medium text-black">
+        <div className="h-14 text-[52px] font-clash font-medium text-black">
           Business Growth
         </div>
-        <div className="h-16 text-[52px] font-clash font-medium text-black">
+        <div className="h-14 text-[52px] font-clash font-medium text-black">
           Strategies & Solutions
         </div>
       </div>

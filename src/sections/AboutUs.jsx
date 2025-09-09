@@ -4,7 +4,7 @@ import dots from "../assets/images/black-dots.svg";
 
 function AboutUs(props) {
   return (
-    <div className="min-h-[120vh] bg-[#F3C387] w-full -mt-[150px] relative z-0 px-6 py-20">
+    <div className="min-h-[102vh] bg-[#F3C387] w-full -mt-[150px] relative z-0 px-6 pt-20 pb-0">
       {/* Content container */}
       <div className="max-w-[85%] mx-auto relative mt-36">
         {/* Main content area with image and text overlay */}

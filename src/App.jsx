@@ -1,4 +1,5 @@
 import AboutUs from "./sections/AboutUs";
+import GrowthMatrix from "./sections/GrowthMatrix";
 import HeroSection from "./sections/HeroSection";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="w-full">
       <HeroSection />
       <AboutUs/>
+      <GrowthMatrix/>
     </div>
   );
 }

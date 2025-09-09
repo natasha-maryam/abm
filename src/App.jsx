@@ -1,4 +1,6 @@
 import AboutUs from "./sections/AboutUs";
+import BusinessCredit from "./sections/BusinessCredit";
+import CustomerRetention from "./sections/CustomerRetention";
 import GrowthMatrix from "./sections/GrowthMatrix";
 import HeroSection from "./sections/HeroSection";
 
@@ -8,6 +10,8 @@ function App() {
       <HeroSection />
       <AboutUs/>
       <GrowthMatrix/>
+      <BusinessCredit/>
+      <CustomerRetention/>
       <br/>
     </div>
   );

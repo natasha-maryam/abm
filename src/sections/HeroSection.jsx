@@ -18,7 +18,7 @@ const HeroSection = () => (
     <section className="w-[85%] mx-auto min-h-[80vh] py-14 pb-32 relative">
       {/* White Opacity Circle - aligned with Comprehensive heading */}
       <div className="absolute top-[54px] right-[600px] w-[100px] h-[100px] bg-white/10 rounded-full z-0 border border-white/20"></div>
-      
+
       {/* Three Headings in Column */}
       <div className="space-y-4 mb-8 max-w-3xl relative z-10">
         <div className="h-14 text-[52px] font-clash font-medium text-black">
@@ -35,7 +35,7 @@ const HeroSection = () => (
       {/* Content and Images Area */}
       <div className="flex items-start gap-68">
         {/* Left Content Area */}
-        <div >
+        <div>
           {/* Paragraph */}
           <div
             className="text-[18px] font-nunito rounded mb-8 font-medium"
@@ -47,25 +47,25 @@ const HeroSection = () => (
           </div>
 
           {/* Button */}
-
-          <a
-            href="#contact"
-            className="flex items-center justify-between bg-[#68EF78] hover:bg-[#68EF78] text-[#1D1B1D] text-[16px] font-semibold px-2 w-[163px] h-[52px] rounded-full font-nunito"
-          >
-            <span className="text-[16px] pl-4">Get Started</span>
-            <div className="flex items-center justify-center bg-white rounded-full w-[40px] h-[40px]">
-              <img src={arrow} />
+          <div className="flex justify-between items-start mr-6">
+            <a
+              href="#contact"
+              className="flex items-center justify-between bg-[#68EF78] hover:bg-[#68EF78] text-[#1D1B1D] text-[16px] font-semibold px-2 w-[163px] h-[52px] rounded-full font-nunito"
+            >
+              <span className="text-[16px] pl-4">Get Started</span>
+              <div className="flex items-center justify-center bg-white rounded-full w-[40px] h-[40px]">
+                <img src={arrow} />
+              </div>
+            </a>
+            {/* Small Image */}
+            <div className="w-[208px] h-[200px]  rounded-[16.54px] mt-10">
+              <img src={image1} alt="Image" />
             </div>
-          </a>
+          </div>
         </div>
 
         {/* Right Images Area */}
         <div className="flex items-end space-x-6 relative">
-          {/* Small Image */}
-          <div className="w-[208px] h-[200px]  rounded-[16.54px]">
-            <img src={image1} alt="Image" />
-          </div>
-
           {/* Medium Image */}
           <div className="w-[272px] h-[249px]  rounded-[16.54px]">
             <img src={image2} alt="Image" />

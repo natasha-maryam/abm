@@ -15,9 +15,12 @@ const HeroSection = () => (
     }}
   >
     <Header />
-    <section className="w-[85%] mx-auto min-h-[80vh] py-14 pb-32">
+    <section className="w-[85%] mx-auto min-h-[80vh] py-14 pb-32 relative">
+      {/* White Opacity Circle - aligned with Comprehensive heading */}
+      <div className="absolute top-[54px] right-[600px] w-[100px] h-[100px] bg-white/10 rounded-full z-0 border border-white/20"></div>
+      
       {/* Three Headings in Column */}
-      <div className="space-y-4 mb-8 max-w-3xl">
+      <div className="space-y-4 mb-8 max-w-3xl relative z-10">
         <div className="h-14 text-[52px] font-clash font-medium text-black">
           Comprehensive
         </div>

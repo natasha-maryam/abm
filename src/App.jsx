@@ -22,7 +22,6 @@ function App() {
       <NextStep/>
       <YouthProgram/>
       <Footer/>
-      <br />
     </div>
   );
 }

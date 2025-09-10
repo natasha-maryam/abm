@@ -1,13 +1,14 @@
 import React from "react";
 import GrowthPlan from "../assets/images/growth-plan.png";
 import LeftImage from "../assets/images/solutions.png";
+import bg from "../assets/images/approach-bg.jpg"
 
 function FlexibleApproach(props) {
   return (
     <div
       className="w-full mt-[-15%] md:mt-[-5%] pt-[10%] md:pt-0"
       style={{
-        backgroundImage: "url('./src/assets/images/approach-bg.jpg')",
+        backgroundImage: `url(${bg})`,
         height: "auto", // define your height here
         backgroundRepeat: "no-repeat",
         backgroundSize: "100% calc(100% + 0px)", // Extend background to cover overlap

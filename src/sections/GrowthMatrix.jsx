@@ -1,16 +1,17 @@
 import React from "react";
 import LeftImage from "../assets/images/matrix-left.svg";
+import bg from "../assets/images/matrix-bg.png"
 
 function GrowthMatrix(props) {
   return (
     <div
       className="w-full mt-[-15%] md:mt-[-5%] pt-[10%] md:pt-0"
       style={{
-        backgroundImage: "url('./src/assets/images/matrix-bg.png')",
+        backgroundImage: `url(${bg})`,
         height: "auto", // define your height here
-        backgroundRepeat:'no-repeat',
-      backgroundSize: "100% calc(100% + 0px)", // Extend background to cover overlap
-        backgroundPosition:'center'
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "100% calc(100% + 0px)", // Extend background to cover overlap
+        backgroundPosition: "center",
       }}
     >
       <div className="pt-[100%] md:pt-[21%] flex flex-col md:items-center px-5">
@@ -21,8 +22,7 @@ function GrowthMatrix(props) {
           Define Business Success
         </p>
         <p className="md:hidden font-bold text-[30px] text-center md:text-[52px] font-nunito bg-gradient-to-r from-[#B84F6A] to-[#511B29] bg-clip-text text-transparent drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)]">
-          The Growth Matrix: Four Forces That
-          Define Business Success
+          The Growth Matrix: Four Forces That Define Business Success
         </p>
         <p
           className="text-[16px] font-bold font-nunito max-w-4xl mt-[20px] text-justify mx-auto"
@@ -46,7 +46,7 @@ function GrowthMatrix(props) {
         <div className="items-start flex flex-col pt-4 sm:px-4">
           <h2 className="text-center md:text-left font-medium text-[40px] font-clash text-black">
             Digital Marketing: Your
-          <br className="hidden md:flex"/>            Gateway To Growth
+            <br className="hidden md:flex" /> Gateway To Growth
           </h2>
           <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[7px] leading-relaxed font-bold max-w-2xl">
             Without visibility, even the best businesses remain hidden gems.
@@ -76,10 +76,10 @@ function GrowthMatrix(props) {
           </div>
 
           <div>
-                 <h3 className="font-medium text-[18px] font-clash text-black mb-[7px]">
+            <h3 className="font-medium text-[18px] font-clash text-black mb-[7px]">
               How We Help
             </h3>
-               <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-bold">
+            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-bold">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 Develop targeted social media campaigns that connect with your

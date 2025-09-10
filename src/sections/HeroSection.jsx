@@ -4,12 +4,13 @@ import image1 from "../assets/images/hero-image-1.png";
 import image2 from "../assets/images/hero-image-2.png";
 import image3 from "../assets/images/hero-image-3.png";
 import dots from "../assets/images/white-dots.svg";
+import bg from "../assets/images/hero-section.png"
 
 const HeroSection = () => (
   <div
     className="min-h-[calc(100vh+15px)] bg-no-repeat bg-top w-full pt-8 relative z-10 px-[5%]"
     style={{
-      backgroundImage: "url('./src/assets/images/hero-section.png')",
+      backgroundImage: `url(${bg})`,
       backgroundSize: "100% calc(100% + 0px)",
       marginBottom: "-100px",
     }}

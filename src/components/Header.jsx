@@ -1,5 +1,6 @@
 import { useState } from "react";
 import arrow from "../assets/images/arrow_outward.svg";
+import logo from "../assets/images/logo.png"
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex-shrink-0">
           <img
-            src="./src/assets/images/logo.png"
+            src={logo}
             alt="ABM Logo"
             className="h-10 w-auto"
           />

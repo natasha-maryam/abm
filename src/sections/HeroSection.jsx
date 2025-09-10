@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Header from "../components/Header";
+import ContactModal from "../components/ContactModal";
 import arrow from "../assets/images/arrow_outward.svg";
 import image1 from "../assets/images/hero-image-1.png";
 import image2 from "../assets/images/hero-image-2.png";
@@ -6,16 +8,20 @@ import image3 from "../assets/images/hero-image-3.png";
 import dots from "../assets/images/white-dots.svg";
 import bg from "../assets/images/hero-section.png"
 
-const HeroSection = () => (
-  <div
-    className="min-h-[calc(100vh+15px)] bg-no-repeat bg-top w-full pt-8 relative z-10 px-[5%]"
-    style={{
-      backgroundImage: `url(${bg})`,
-      backgroundSize: "100% calc(100% + 0px)",
-      marginBottom: "-100px",
-    }}
-  >
-    <Header />
+const HeroSection = () => {
+  const [contactModalOpen, setContactModalOpen] = useState(false);
+
+  return (
+    <>
+      <div
+        className="min-h-[calc(100vh+15px)] bg-no-repeat bg-top w-full pt-8 relative z-10 px-[5%]"
+        style={{
+          backgroundImage: `url(${bg})`,
+          backgroundSize: "100% calc(100% + 0px)",
+          marginBottom: "-100px",
+        }}
+      >
+        <Header onContactClick={() => setContactModalOpen(true)} />
     <section className="w-full   py-14 pb-5 md:pb-32 relative">
       {/* White Opacity Circle */}
       <div className="hidden md:block absolute top-[54px] right-[600px] w-[100px] h-[100px] bg-white/10 rounded-full z-0 border border-white/20"></div>
@@ -96,6 +102,14 @@ const HeroSection = () => (
       </div>
     </section>
   </div>
-);
+
+  {/* Contact Modal - Rendered outside the hero section to avoid z-index issues */}
+  <ContactModal 
+    isOpen={contactModalOpen} 
+    onClose={() => setContactModalOpen(false)} 
+  />
+</>
+  );
+};
 
 export default HeroSection;

@@ -48,7 +48,7 @@ function GrowthMatrix(props) {
             Digital Marketing: Your
             <br className="hidden md:flex" /> Gateway To Growth
           </h2>
-          <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[7px] leading-relaxed font-bold max-w-2xl">
+          <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[7px] leading-relaxed font-medium max-w-2xl">
             Without visibility, even the best businesses remain hidden gems.
             Digital marketing isn't just about being online—it's about being
             found, chosen, and remembered.
@@ -58,7 +58,7 @@ function GrowthMatrix(props) {
             <h3 className="font-medium text-[18px] font-clash text-black mb-4[7px">
               Why It's Critical
             </h3>
-            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-bold">
+            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-medium">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 87% of consumers begin product searches online
@@ -79,7 +79,7 @@ function GrowthMatrix(props) {
             <h3 className="font-medium text-[18px] font-clash text-black mb-[7px]">
               How We Help
             </h3>
-            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-bold">
+            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-medium">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 Develop targeted social media campaigns that connect with your

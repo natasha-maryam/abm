@@ -21,7 +21,7 @@ function CustomerRetention(props) {
           <h2 className="font-medium text-[40px] font-clash text-black mb-2 -mt-1">
             The Profit Multiplier
           </h2>
-          <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[18px] leading-relaxed font-bold max-w-2xl">
+          <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[18px] leading-relaxed font-medium max-w-2xl">
             Acquiring a new customer costs 5-25 times more than retaining an
             existing one. Customer retention is the hidden engine of profitable
             growth.
@@ -32,7 +32,7 @@ function CustomerRetention(props) {
             <h3 className="font-medium text-[18px] font-clash text-black mb-[14px]">
               Why It's Critical
             </h3>
-            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-bold">
+            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-medium">
               <li className="flex items-start">
                 <span className="mr-2">•</span>A 5% increase in customer
                 retention can increase profits by 25-95%
@@ -53,7 +53,7 @@ function CustomerRetention(props) {
             <h3 className="font-medium text-[18px] font-clash text-black mb-[14px]">
               How We Help
             </h3>
-            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-bold">
+            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-medium">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 Design customer journey maps that identify and eliminate pain

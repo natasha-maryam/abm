@@ -23,7 +23,7 @@ function FlexibleApproach(props) {
           Our Flexible Approach To Success
         </p>
         <p
-          className="text-[16px] font-bold font-nunito max-w-4xl mt-[16px] text-justify mx-auto"
+          className="text-[16px] font-medium font-nunito max-w-4xl mt-[16px] text-justify mx-auto"
           style={{ lineHeight: "26px", textAlignLast: "center" }}
         >
           Every business faces unique challenges and opportunities. That's why
@@ -36,7 +36,7 @@ function FlexibleApproach(props) {
           <h2 className="font-medium text-[40px] font-clash text-black mb-2 -mt-1">
             Comprehensive Growth Plan
           </h2>
-          <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[18px] leading-relaxed font-bold max-w-2xl">
+          <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[18px] leading-relaxed font-medium max-w-2xl">
             We can help you implement and optimize all four pillars
             simultaneously, creating a robust foundation for sustainable growth.
             This integrated approach ensures all elements work together

@@ -18,7 +18,7 @@ function BusinessCredit(props) {
           <br className="hidden md:flex"/>
              &nbsp;Growth Foundation
           </h2>
-          <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[24px] leading-relaxed font-bold max-w-2xl">
+          <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[24px] leading-relaxed font-medium max-w-2xl">
             Without strong business credit, growth hits a ceiling. Separating
             personal and business credit is crucial for sustainable scaling.
           </p>
@@ -27,7 +27,7 @@ function BusinessCredit(props) {
             <h3 className="font-medium text-[18px] font-clash text-black mb-[14px]">
               Why It's Critical
             </h3>
-            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-bold">
+            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-medium">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 45% of small businesses fail due to inadequate financing
@@ -49,7 +49,7 @@ function BusinessCredit(props) {
             <h3 className="font-medium text-[18px] font-clash text-black mb-[14px]">
               How We Help
             </h3>
-            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-bold">
+            <ul className="space-y-2 text-[16px] font-nunito text-[#1D1B1D] font-medium">
               <li className="flex items-start">
                 <span className="mr-2">•</span>
                 Establish proper business credit foundations

@@ -2,9 +2,9 @@ import React from "react";
 import step1 from "../assets/images/next-step-1.png";
 import step2 from "../assets/images/next-step-2.png";
 import step3 from "../assets/images/next-step-3.png";
-import call from "../assets/images/call.png"
+import call from "../assets/images/call.png";
 import arrow from "../assets/images/arrow_outward.svg";
-
+import top from "../assets/images/next-step-bottom.png";
 
 function NextStep({ openContactModal }) {
   return (
@@ -91,6 +91,7 @@ function NextStep({ openContactModal }) {
             <span className="pl-2">(877) 721-7447</span>
           </p>
         </div>
+        {/* <img src={top} className="bg-red-200 w-full" /> */}
       </div>
     </div>
   );

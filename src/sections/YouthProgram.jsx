@@ -1,9 +1,14 @@
 import React from "react";
 import LeftImage from "../assets/images/youth-program.png";
 import arrow from "../assets/images/arrow_outward.svg";
+
 function YouthProgram({ openContactModal }) {
   return (
-    <div id="youth-program" className="w-full bg-[#00ffff] min-h-[70vh] -mt-[5%] ">
+    <div
+      id="youth-program"
+      className="w-full bg-[#00ffff] min-h-[70vh] -mt-[5%] "
+    >
+
       <div className="flex flex-col md:flex-row md:w-[85%] w-full mx-auto items-center justify-center pt-[4%]">
         <div className="items-start flex flex-col pt-4 px-4">
           <h2 className="font-semibold text-[40px] font-clash bg-gradient-to-r from-[#B84F6A] to-[#511B29] bg-clip-text text-transparent">

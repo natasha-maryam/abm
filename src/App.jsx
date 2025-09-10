@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Footer from "./components/Footer";
+import ContactModal from "./components/ContactModal";
 import AboutUs from "./sections/AboutUs";
 import BusinessCredit from "./sections/BusinessCredit";
 import CustomerRetention from "./sections/CustomerRetention";
@@ -10,6 +12,11 @@ import Reputation from "./sections/Reputation";
 import YouthProgram from "./sections/YouthProgram";
 
 function App() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const openContactModal = () => setIsContactModalOpen(true);
+  const closeContactModal = () => setIsContactModalOpen(false);
+
   return (
     <div className="overflow-hidden ">
       <HeroSection />
@@ -19,9 +26,10 @@ function App() {
       <CustomerRetention />
       <Reputation />
       <FlexibleApproach/>
-      <NextStep/>
-      <YouthProgram/>
+      <NextStep openContactModal={openContactModal} />
+      <YouthProgram openContactModal={openContactModal} />
       <Footer/>
+      <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
     </div>
   );
 }

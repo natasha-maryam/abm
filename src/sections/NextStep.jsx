@@ -6,7 +6,7 @@ import call from "../assets/images/call.png"
 import arrow from "../assets/images/arrow_outward.svg";
 
 
-function NextStep(props) {
+function NextStep({ openContactModal }) {
   return (
     <div className="w-full bg-[#511B29] min-h-[80vh] -mt-4 ">
       <div className="flex flex-col md:items-center px-5">
@@ -77,15 +77,15 @@ function NextStep(props) {
           </div>
         </div>
         <div className="flex items-center justify-center mt-6 mb-10 gap-8">
-          <a
-            href="#contact"
+          <button
+            onClick={openContactModal}
             className="flex items-center bg-[#68EF78] hover:bg-[#68EF78] text-[#1D1B1D] text-[16px] font-semibold px-3 py-[7px] rounded-full font-nunito max-w-[200px] w-full sm:w-auto"
           >
             <span className="pl-2">Get Started</span>
             <div className="flex items-center justify-center bg-white rounded-full w-10 h-10 ml-3">
               <img src={arrow} alt="Arrow Icon" />
             </div>
-          </a>
+          </button>
           <p className="flex items-center text-white text-[16px] font-semibold px-8 py-3 rounded-full font-nunito max-w-[250px] w-full sm:w-auto border border-white">
             <img src={call} alt="Call Icon" />
             <span className="pl-2">(877) 721-7447</span>

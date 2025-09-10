@@ -2,33 +2,18 @@ import React, { useEffect, useState } from "react";
 import LeftImage from "../assets/images/retention.png";
 
 function CustomerRetention(props) {
-  const [imageHeight, setImageHeight] = useState(0);
-
-  useEffect(() => {
-    const img = new Image();
-    img.onload = function () {
-      // Calculate height based on viewport width and image aspect ratio
-      const aspectRatio = this.naturalHeight / this.naturalWidth;
-      const viewportWidth = window.innerWidth;
-      setImageHeight(viewportWidth * aspectRatio);
-    };
-    img.src = "./src/assets/images/retention-bg.jpg";
-  }, []);
-
   return (
     <div
       className="w-full -mt-[8%]"
       style={{
         backgroundImage: "url('./src/assets/images/retention-bg.jpg')",
         backgroundRepeat: "no-repeat",
-        backgroundSize: "100% auto",
+        backgroundSize: "100% calc(100% - 8%)",
         backgroundPosition: "center top",
-        height: imageHeight > 0 ? `${imageHeight}px` : "100vh",
-        minHeight: "400px", // Fallback minimum height
       }}
     >
-      <div className="flex w-[85%] mx-auto items-center justify-center pt-[20%]">
-        <div className="items-start flex flex-col pt-4">
+      <div className="flex flex-col md:flex-row md:w-[85%] w-full mx-auto items-center justify-center -mt-[35%]  md:-mt-0 pt-[50%] md:pt-[20%] md:pb-[20%]">
+        <div className="items-start flex flex-col pt-4 px-4">
           <h2 className="font-medium text-[40px] font-clash text-black">
             Customer Retention
           </h2>
@@ -86,11 +71,11 @@ function CustomerRetention(props) {
             </ul>
           </div>
         </div>
-        <div className="mt-10 pl-8">
+        <div className="mt-10 px-8 md:px-0 md:pl-8 mb-[50%] md:mb-0">
           <img
             src={LeftImage}
             alt="Digital Marketing"
-            className="w-[665px] h-[517px]"
+            className="md:w-[665px] md:h-[517px]"
           />
         </div>
       </div>

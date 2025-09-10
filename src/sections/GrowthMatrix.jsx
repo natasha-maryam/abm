@@ -4,20 +4,24 @@ import LeftImage from "../assets/images/matrix-left.svg";
 function GrowthMatrix(props) {
   return (
     <div
-      className="w-full mt-0"
+      className="w-full mt-[-15%] md:mt-[-5%] pt-[10%] md:pt-0"
       style={{
         backgroundImage: "url('./src/assets/images/matrix-bg.png')",
         height: "auto", // define your height here
         backgroundRepeat:'no-repeat',
-        backgroundSize:'cover',
+      backgroundSize: "100% calc(100% + 0px)", // Extend background to cover overlap
         backgroundPosition:'center'
       }}
     >
-      <div className="pt-[21%] flex flex-col items-center">
-        <p className="font-bold text-[52px] font-nunito bg-gradient-to-r from-[#B84F6A] to-[#511B29] bg-clip-text text-transparent drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)]">
+      <div className="pt-[100%] md:pt-[21%] flex flex-col md:items-center px-5">
+        <p className="hidden md:flex font-bold text-[30px] md:text-[52px] font-nunito bg-gradient-to-r from-[#B84F6A] to-[#511B29] bg-clip-text text-transparent drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)]">
           The Growth Matrix: Four Forces That
         </p>
-        <p className="font-bold text-[52px] font-nunito bg-gradient-to-r from-[#B84F6A] to-[#511B29] bg-clip-text text-transparent drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)] -mt-6">
+        <p className="hidden md:flex font-bold text-[30px] md:text-[52px] font-nunito bg-gradient-to-r from-[#B84F6A] to-[#511B29] bg-clip-text text-transparent drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)] -mt-4">
+          Define Business Success
+        </p>
+        <p className="md:hidden font-bold text-[30px] text-center md:text-[52px] font-nunito bg-gradient-to-r from-[#B84F6A] to-[#511B29] bg-clip-text text-transparent drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)]">
+          The Growth Matrix: Four Forces That
           Define Business Success
         </p>
         <p
@@ -31,20 +35,18 @@ function GrowthMatrix(props) {
           pillars that determine long-term success
         </p>
       </div>
-      <div className="flex justify-between w-[85%] mx-auto mt-[24px] mb-[8%] items-center">
-        <div className="w-[40%] mt-10 pl-8">
+      <div className="flex flex-col md:flex-row w-[90%] md:w-[85%] w-full mx-auto md:mt-[20px] mb-[40%] md:mb-[8%] items-center justify-center">
+        <div className=" mt-10 md:pl-8 ">
           <img
             src={LeftImage}
             alt="Digital Marketing"
-            className="w-[665px] h-[517px]"
+            className="md:w-[665px] md:h-[517px]"
           />
         </div>
-        <div className="w-[60%] items-start flex flex-col pt-4">
-          <h2 className="font-medium text-[40px] font-clash text-black">
+        <div className="items-start flex flex-col pt-4 sm:px-4">
+          <h2 className="text-center md:text-left font-medium text-[40px] font-clash text-black">
             Digital Marketing: Your
-          </h2>
-          <h2 className="font-medium text-[40px] font-clash text-black mb-2 -mt-1">
-            Gateway To Growth
+          <br className="hidden md:flex"/>            Gateway To Growth
           </h2>
           <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[7px] leading-relaxed font-bold max-w-2xl">
             Without visibility, even the best businesses remain hidden gems.

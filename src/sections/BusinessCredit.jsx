@@ -3,21 +3,20 @@ import LeftImage from "../assets/images/credit.png";
 
 function BusinessCredit(props) {
   return (
-    <div className="min-h-[66vh] bg-[#00ffff] w-full  pt-14 pb-0">
-      <div className="flex w-[85%] mx-auto items-center justify-center">
-        <div className="mt-10 pl-8">
+    <div className="min-h-[80vh] md:min-h-[75vh] bg-[#00ffff] w-full pt-16 pb-0">
+      <div className="flex flex-col md:flex-row md:w-[85%] w-full mx-auto items-center justify-center">
+        <div>
           <img
             src={LeftImage}
             alt="Digital Marketing"
-            className="w-[665px] h-[517px]"
+            className="md:w-[665px] md:h-[517px]"
           />
         </div>
-        <div className="items-start flex flex-col pt-4">
+        <div className="items-start flex flex-col pt-4 px-5 md:px-0">
           <h2 className="font-medium text-[40px] font-clash text-black">
-            Business Credit: Your
-          </h2>
-          <h2 className="font-medium text-[40px] font-clash text-black mb-2 -mt-1">
-            Growth Foundation
+            Business Credit: Your 
+          <br className="hidden md:flex"/>
+             &nbsp;Growth Foundation
           </h2>
           <p className="text-[16px] font-nunito text-[#1D1B1D] mb-[24px] leading-relaxed font-bold max-w-2xl">
             Without strong business credit, growth hits a ceiling. Separating

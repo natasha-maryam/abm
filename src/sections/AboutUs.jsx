@@ -4,9 +4,9 @@ import dots from "../assets/images/black-dots.svg";
 
 function AboutUs(props) {
   return (
-    <div className="min-h-[102vh] bg-[#F3C387] w-full -mt-[150px] relative z-0 px-6 pt-20 pb-0">
+    <div className="min-h-[102vh] bg-[#F3C387] w-full -mt-[300px] md:-mt-[150px] relative z-0 px-6 pt-20 pb-0">
       {/* Content container */}
-      <div className="max-w-[85%] mx-auto relative mt-36">
+      <div className=" md:max-w-[85%] max-w-[90%] mx-auto relative mt-[16rem] md:mt-36">
         {/* Main content area with image and text overlay */}
         <div className="relative">
           {/* Background image positioned on the right */}
@@ -25,14 +25,14 @@ function AboutUs(props) {
               className="absolute bottom-6 -right-8 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 z-10"
             />
             {/* Blur overlay where content overlaps */}
-            <div className="absolute top-16 sm:top-20 left-0 w-[50%] sm:w-[40%] md:w-[30%] h-[88%] backdrop-blur-sm bg-white/10"></div>
+            <div className="hidden md:flex absolute top-16 sm:top-20 left-0 w-[50%] sm:w-[40%] md:w-[30%] h-[88%] backdrop-blur-sm bg-white/10"></div>
           </div>
           {/* About Us heading */}
           <h2 className="text-2xl sm:text-3xl md:text-[40px] font-medium text-[#1D1B1D] font-clash mb-0">
             About Us
           </h2>
           {/* Text overlay with light blue background */}
-          <div className="relative z-10 w-full sm:w-[75%] md:w-[65%] bg-[#5FBEDE]/70 p-4 sm:p-6 md:p-8 h-[450px] sm:h-[550px] md:h-[608px] top-16 sm:top-11">
+          <div className="relative z-10 w-full w-[85%] md:w-[65%] bg-[#5FBEDE]/70 p-4 sm:p-6 md:p-8   md:h-[608px] top-60 md:top-[44px] sm:top-11">
             <div className="space-y-4 text-[#555555]">
               <p className="text-[16px] leading-relaxed">
                 Born from Fortune 500 expertise, reimagined for entrepreneurial

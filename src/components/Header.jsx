@@ -1,10 +1,28 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import arrow from "../assets/images/arrow_outward.svg";
 import logo from "../assets/images/logo.png";
 
 const Header = ({ onContactClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Handle click outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setServicesDropdownOpen(false);
+      }
+    };
+
+    if (servicesDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [servicesDropdownOpen]);
 
   return (
     <header className="w-full  mb-4 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20  md:rounded-full rounded-full">
@@ -38,7 +56,7 @@ const Header = ({ onContactClick }) => {
           >
             About Us
           </a>
-          <div className="relative">
+          <div className="relative" ref={dropdownRef}>
             <button
               className="block md:inline-block hover:text-green-300 px-2 py-1 text-center focus:outline-none"
               onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
@@ -50,7 +68,6 @@ const Header = ({ onContactClick }) => {
             {servicesDropdownOpen && (
               <div
                 className="absolute top-full left-0 mt-2 w-[220px] h-[190px] bg-white/20 backdrop-blur-sm rounded-2xl  border border-white/20 p-y-1 px-2 z-50 overflow-hidden"
-                onMouseLeave={() => setServicesDropdownOpen(false)}
               >
                 <div className="space-y-[8px] h-full flex flex-col justify-center">
                   <a

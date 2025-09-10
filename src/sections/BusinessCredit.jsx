@@ -3,7 +3,7 @@ import LeftImage from "../assets/images/credit.png";
 
 function BusinessCredit(props) {
   return (
-    <div className="min-h-[80vh] md:min-h-[75vh] bg-[#00ffff] w-full pt-16 pb-0">
+    <div id="business-credit" className="min-h-[80vh] md:min-h-[75vh] bg-[#00ffff] w-full pt-16 pb-0">
       <div className="flex flex-col md:flex-row md:w-[85%] w-full mx-auto items-center justify-center">
         <div>
           <img

@@ -7,6 +7,24 @@ const Header = ({ onContactClick }) => {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
+  // Handle smooth scrolling to sections
+  const scrollToSection = (sectionId) => {
+    // First close the dropdown immediately
+    setServicesDropdownOpen(false);
+    setMenuOpen(false);
+    
+    // Then scroll to the section
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    }, 50);
+  };
+
   // Handle click outside to close dropdown
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -49,16 +67,15 @@ const Header = ({ onContactClick }) => {
             md:flex md:items-center md:justify-center md:gap-8 text-white font-normal font-dm mt-4 md:mt-0
           `}
         >
-          <a
-            href="#about"
-            className="block md:inline-block hover:text-green-300 px-2 py-1 text-center"
-            onClick={() => setMenuOpen(false)}
+          <button
+            className="block md:inline-block hover:text-green-300 px-2 py-1 text-center cursor-pointer"
+            onClick={() => scrollToSection('about-us')}
           >
             About Us
-          </a>
+          </button>
           <div className="relative" ref={dropdownRef}>
             <button
-              className="block md:inline-block hover:text-green-300 px-2 py-1 text-center focus:outline-none"
+              className="block md:inline-block hover:text-green-300 px-2 py-1 text-center focus:outline-none cursor-pointer"
               onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
             >
               Services
@@ -70,57 +87,44 @@ const Header = ({ onContactClick }) => {
                 className="absolute top-full left-0 mt-2 w-[220px] h-[190px] bg-white/20 backdrop-blur-sm rounded-2xl  border border-white/20 p-y-1 px-2 z-50 overflow-hidden"
               >
                 <div className="space-y-[8px] h-full flex flex-col justify-center">
-                  <a
-                    href="#digital-marketing"
-                    className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-2 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30"
-                    onClick={() => {
-                      setServicesDropdownOpen(false);
-                      setMenuOpen(false);
-                    }}
+                  <button
+                    className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-2 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => scrollToSection('growth-matrix')}
                   >
                     Digital Marketing
-                  </a>
-                  <a
-                    href="#customer-retention"
-                    className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-1.5 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30"
-                    onClick={() => {
-                      setServicesDropdownOpen(false);
-                      setMenuOpen(false);
-                    }}
+                  </button>
+                  <button
+                    className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-1.5 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => scrollToSection('customer-retention')}
                   >
                     Customer Retention
-                  </a>
-                  <a
-                    href="#reputation-management"
-                    className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-1.5 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30"
-                    onClick={() => {
-                      setServicesDropdownOpen(false);
-                      setMenuOpen(false);
-                    }}
+                  </button>
+                  <button
+                    className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-1.5 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => scrollToSection('reputation-management')}
                   >
                     Reputation Management
-                  </a>
-                  <a
-                    href="#fundraising-growth"
-                    className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-1.5 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30"
-                    onClick={() => {
-                      setServicesDropdownOpen(false);
-                      setMenuOpen(false);
-                    }}
+                  </button>
+                  <button
+                    className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-1.5 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => scrollToSection('business-credit')}
                   >
                     Fundraising Growth
-                  </a>
+                  </button>
                 </div>
               </div>
             )}
           </div>
-          <a
-            href="#spark"
-            className="block md:inline-block hover:text-green-300 px-2 py-1 text-center"
-            onClick={() => setMenuOpen(false)}
+          <button
+            className="block md:inline-block hover:text-green-300 px-2 py-1 text-center cursor-pointer"
+            onClick={() => scrollToSection('youth-program')}
           >
             The Spark
-          </a>
+          </button>
         </div>
 
         {/* Contact button */}

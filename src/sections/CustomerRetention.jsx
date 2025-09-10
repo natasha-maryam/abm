@@ -5,6 +5,7 @@ import bg from "../assets/images/retention-bg.jpg"
 function CustomerRetention(props) {
   return (
     <div
+      id="customer-retention"
       className="w-full -mt-[8%]"
       style={{
         backgroundImage: `url(${bg})`,

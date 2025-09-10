@@ -5,6 +5,7 @@ import bg from "../assets/images/matrix-bg.png"
 function GrowthMatrix(props) {
   return (
     <div
+      id="growth-matrix"
       className="w-full mt-[-15%] md:mt-[-5%] pt-[10%] md:pt-0"
       style={{
         backgroundImage: `url(${bg})`,

@@ -184,28 +184,50 @@ const ContactModal = ({ isOpen, onClose }) => {
                   Select Consultation?
                 </label>
                 <div className="flex space-x-6">
-                  <label className="flex items-center">
+                  <label className="flex items-center cursor-pointer">
                     <input
                       type="radio"
                       name="consultationType"
                       value="phone"
                       checked={formData.consultationType === "phone"}
                       onChange={handleInputChange}
-                      className="w-4 h-4 text-green-500 border-gray-300 focus:ring-green-500"
+                      className="sr-only"
                     />
+                    <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                      formData.consultationType === "phone" 
+                        ? "bg-black border-black" 
+                        : "bg-gray-300 border-gray-300"
+                    }`}>
+                      {formData.consultationType === "phone" && (
+                        <svg width="10" height="7" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 4.5L4.5 8L11 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                    </div>
                     <span className="ml-2 text-[14px]  font-dm">
                       Phone Consultation
                     </span>
                   </label>
-                  <label className="flex items-center">
+                  <label className="flex items-center cursor-pointer">
                     <input
                       type="radio"
                       name="consultationType"
                       value="email"
                       checked={formData.consultationType === "email"}
                       onChange={handleInputChange}
-                      className="w-4 h-4 text-green-500 border-gray-300 focus:ring-green-500"
+                      className="sr-only"
                     />
+                    <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                      formData.consultationType === "email" 
+                        ? "bg-black border-black" 
+                        : "bg-gray-300 border-gray-300"
+                    }`}>
+                      {formData.consultationType === "email" && (
+                        <svg width="10" height="7" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 4.5L4.5 8L11 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                    </div>
                     <span className="ml-2 text-[14px]  font-dm">
                       Email Consultation
                     </span>
@@ -236,7 +258,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <div>
                 <button
                   type="submit"
-                  className="font-nunito bg-[#68EF78] hover:bg-green-400 text-gray-800 font-medium py-3 px-6 rounded-full transition-colors duration-200 -mt-4"
+                  className="font-nunito bg-[#68EF78] hover:bg-green-400 text-gray-800 font-semibold py-3 px-6 rounded-full transition-colors duration-200 -mt-4"
                 >
                   Send Message
                 </button>

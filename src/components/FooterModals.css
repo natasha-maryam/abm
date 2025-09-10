@@ -238,6 +238,18 @@
     display: inline-block;
 }
 
+/* Hide the ::before pseudo-element for list items that have green-tick icons */
+.terms-list li.with-green-tick::before {
+    display: none;
+}
+
+/* Adjust padding for list items with green-tick icons */
+.terms-list li.with-green-tick {
+    padding-left: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
 .terms-list li:last-child {
     margin-bottom: 0;
 }
@@ -259,12 +271,13 @@
 .company {
     font-size: 18px;
     font-weight: 400;
+    margin-top: 10px;
     line-height: 18px !important;
     font-family: "DM Sans", sans-serif !important;
 }
 
 .email {
-    margin-top: 8px;
+    margin-top: 15px;
     font-size: 18px;
     font-weight: 400;
     line-height: 18px;
@@ -550,6 +563,17 @@
         line-height: 20px;
     }
 
+    /* Mobile styles for green tick icons */
+    .terms-list li.with-green-tick {
+        padding-left: 0;
+    }
+
+    .terms-list li.with-green-tick img {
+        width: 15px !important;
+        height: 15px !important;
+        margin-right: 8px !important;
+    }
+
     .terms-list {
         margin: 10px 0px 0px 0px;
     }
@@ -618,4 +642,15 @@
         font-size: 14px;
         line-height: 20px;
     }
+}
+
+/* Circle gradient styling for rights and choices */
+.cookie-list li.with-circle-gradient::before {
+    display: none;
+}
+
+.cookie-list li.with-circle-gradient {
+    padding-left: 0;
+    display: flex;
+    align-items: flex-start;
 }

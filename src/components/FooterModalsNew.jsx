@@ -1,5 +1,7 @@
 import React, { useEffect, useImperativeHandle, forwardRef } from 'react';
 import './FooterModals.css';
+import greenTick from '../assets/images/green-tick.svg';
+import circleGradient from '../assets/images/circle-gradient.svg';
 
 const FooterModals = forwardRef((props, ref) => {
 
@@ -114,11 +116,26 @@ const FooterModals = forwardRef((props, ref) => {
             <h4 class="terms-section-list-heading">You agree to use our website only for lawful purposes and in
               accordance with these Terms. You agree not to:</h4>
             <ul class="terms-list">
-              <li>Use the site in any way that violates applicable federal, state, local, or international law.</li>
-              <li>Transmit or procure the sending of any advertising or promotional material.</li>
-              <li>Impersonate or attempt to impersonate the company, employees, or other users.</li>
-              <li>Engage in any conduct that restricts or inhibits anyone's use of the website.</li>
-              <li>Use any automated system to access the website</li>
+              <li class="with-green-tick">
+                <img src="${greenTick}" alt="green tick" style="width: 20px; height: 20px; margin-right: 10px; flex-shrink: 0;" />
+                Use the site in any way that violates applicable federal, state, local, or international law.
+              </li>
+              <li class="with-green-tick">
+                <img src="${greenTick}" alt="green tick" style="width: 20px; height: 20px; margin-right: 10px; flex-shrink: 0;" />
+                Transmit or procure the sending of any advertising or promotional material.
+              </li>
+              <li class="with-green-tick">
+                <img src="${greenTick}" alt="green tick" style="width: 20px; height: 20px; margin-right: 10px; flex-shrink: 0;" />
+                Impersonate or attempt to impersonate the company, employees, or other users.
+              </li>
+              <li class="with-green-tick">
+                <img src="${greenTick}" alt="green tick" style="width: 20px; height: 20px; margin-right: 10px; flex-shrink: 0;" />
+                Engage in any conduct that restricts or inhibits anyone's use of the website.
+              </li>
+              <li class="with-green-tick">
+                <img src="${greenTick}" alt="green tick" style="width: 20px; height: 20px; margin-right: 10px; flex-shrink: 0;" />
+                Use any automated system to access the website
+              </li>
             </ul>
           </div>
 
@@ -148,9 +165,15 @@ const FooterModals = forwardRef((props, ref) => {
             <h4 class="disclaimer-bold terms-section-list-heading">THE INFORMATION ON THIS WEBSITE IS PROVIDED
               ON AN "AS IS" BASIS. TO THE FULLEST EXTENT PERMITTED BY LAW, THIS COMPANY:</h4>
             <ul class="terms-list">
-              <li>EXCLUDES ALL REPRESENTATIONS AND WARRANTIES RELATING TO THIS WEBSITE AND ITS CONTENTS</li>
-              <li>EXCLUDES ALL LIABILITY FOR DAMAGES ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THIS
-                WEBSITE</li>
+              <li class="with-green-tick">
+                <img src="${greenTick}" alt="green tick" style="width: 20px; height: 20px; margin-right: 10px; flex-shrink: 0;" />
+                EXCLUDES ALL REPRESENTATIONS AND WARRANTIES RELATING TO THIS WEBSITE AND ITS CONTENTS
+              </li>
+              <li class="with-green-tick">
+                <img src="${greenTick}" alt="green tick" style="width: 20px; height: 20px; margin-right: 10px; flex-shrink: 0;" />
+                EXCLUDES ALL LIABILITY FOR DAMAGES ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THIS
+                WEBSITE
+              </li>
             </ul>
           </div>
 
@@ -189,7 +212,6 @@ const FooterModals = forwardRef((props, ref) => {
             <h2 class="contact-details">Contact Details</h2>
             <h2 class="company"><b>Company:</b> ABM, LLC</h2>
             <h2 class="email"><b>Email:</b> legal@abmize.com</h2>
-            <h2 class="email"><b>Call Us:</b> <a href="tel:8777217447" class="call-me">(877) 721-7447</a></h2>
           </div>
         </div>
       `);
@@ -286,6 +308,73 @@ const FooterModals = forwardRef((props, ref) => {
             </div>
           </div>
 
+          <div class="terms-section">
+            <h3><span>4.</span> Data Security</h3>
+            <p>We implement appropriate security measures to protect your personal information against
+              unauthorized access, alteration, disclosure, or destruction. However, no method of transmission
+              over the internet or electronic storage is 100% secure.</p>
+          </div>
+
+          <div class="terms-section cookie-section-list">
+            <h3><span>5.</span> Your Rights and Choices</h3>
+            <h4 class="third-party-heading">Depending on your location, you may have certain rights regarding
+              your personal information:</h4>
+            <ul class="cookie-list rights-choices-list">
+              <li class="rights-choice-item with-circle-gradient">
+                <img src="${circleGradient}" alt="circle gradient" style="width: 18px; height: 18px; margin-right: 10px; flex-shrink: 0;" />
+                <span>Access:</span> Request access to your personal information
+              </li>
+              <li class="rights-choice-item with-circle-gradient">
+                <img src="${circleGradient}" alt="circle gradient" style="width: 18px; height: 18px; margin-right: 10px; flex-shrink: 0;" />
+                <span>Correction:</span> Request correction of inaccurate information
+              </li>
+              <li class="rights-choice-item with-circle-gradient">
+                <img src="${circleGradient}" alt="circle gradient" style="width: 18px; height: 18px; margin-right: 10px; flex-shrink: 0;" />
+                <span>Deletion:</span> Request deletion of your personal information
+              </li>
+              <li class="rights-choice-item with-circle-gradient">
+                <img src="${circleGradient}" alt="circle gradient" style="width: 18px; height: 18px; margin-right: 10px; flex-shrink: 0;" />
+                <span>Portability:</span> Request transfer of your information
+              </li>
+              <li class="rights-choice-item with-circle-gradient">
+                <img src="${circleGradient}" alt="circle gradient" style="width: 18px; height: 18px; margin-right: 10px; flex-shrink: 0;" />
+                <span>Opt-out:</span> Unsubscribe from marketing communications
+              </li>
+            </ul>
+          </div>
+
+          <div class="terms-section">
+            <h3><span>6.</span> Data Retention</h3>
+            <p>We retain your personal information only as long as necessary to fulfill the purposes for which
+              it was collected, comply with legal obligations, resolve disputes, and enforce our agreements.</p>
+          </div>
+
+          <div class="terms-section">
+            <h3><span>7.</span> Children's Privacy</h3>
+            <p>Our services are not intended for children under 13 years of age. We do not knowingly collect
+              personal information from children under 13. If we discover we have collected information from a
+              child under 13, we will delete such information immediately.</p>
+          </div>
+
+          <div class="terms-section">
+            <h3><span>8.</span> International Transfers</h3>
+            <p>Your information may be transferred to and maintained on computers located outside of your state,
+              province, country, or other governmental jurisdiction where data protection laws may differ.</p>
+          </div>
+
+          <div class="terms-section">
+            <h3><span>9.</span> Third-Party Links</h3>
+            <p>Our website may contain links to third-party websites. We are not responsible for the privacy
+              practices or content of these external sites. We encourage you to review their privacy policies.</p>
+          </div>
+
+          <div class="terms-section">
+            <h3><span>10.</span> California Privacy Rights</h3>
+            <p>If you are a California resident, you have additional rights under the California Consumer
+              Privacy Act (CCPA), including the right to know what personal information we collect, the right
+              to delete personal information, and the right to opt-out of the sale of personal information.</p>
+          </div>
+
           <div class="terms-section" style="border: none; margin-bottom: 0px;">
             <h3><span>11.</span> Questions About Our Policies?</h3>
             <p>If you have any questions about these Terms of Use, Privacy Policy, or Cookie Policy, please
@@ -348,9 +437,18 @@ const FooterModals = forwardRef((props, ref) => {
             <h4 class="third-party-heading">We may also use third-party services that place cookies on your
               device, including:</h4>
             <ul class="cookie-list">
-              <li><span>Google Analytics:</span> For website analytics and performance monitoring</li>
-              <li><span>Social Media Platforms:</span> For social sharing functionality</li>
-              <li><span>Advertising Networks:</span> For targeted advertising (if applicable)</li>
+              <li class="with-circle-gradient">
+                <img src="${circleGradient}" alt="circle gradient" style="width: 18px; height: 18px; margin-right: 10px; flex-shrink: 0;" />
+                <span>Google Analytics:</span> For website analytics and performance monitoring
+              </li>
+              <li class="with-circle-gradient">
+                <img src="${circleGradient}" alt="circle gradient" style="width: 18px; height: 18px; margin-right: 10px; flex-shrink: 0;" />
+                <span>Social Media Platforms:</span> For social sharing functionality
+              </li>
+              <li class="with-circle-gradient">
+                <img src="${circleGradient}" alt="circle gradient" style="width: 18px; height: 18px; margin-right: 10px; flex-shrink: 0;" />
+                <span>Advertising Networks:</span> For targeted advertising (if applicable)
+              </li>
             </ul>
           </div>
 
@@ -379,6 +477,12 @@ const FooterModals = forwardRef((props, ref) => {
                   contacting us.</p>
               </div>
             </div>
+          </div>
+
+          <div class="terms-section">
+            <h3><span>5.</span> Updates to Cookie Policy</h3>
+            <p>We may update this Cookie Policy from time to time to reflect changes in technology, legislation,
+              or our business practices. We encourage you to review this policy periodically.</p>
           </div>
 
           <div class="terms-section" style="border: none; margin-bottom: 0px;">

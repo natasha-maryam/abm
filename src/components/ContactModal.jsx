@@ -13,6 +13,9 @@ const ContactModal = ({ isOpen, onClose }) => {
     message: ""
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -21,12 +24,69 @@ const ContactModal = ({ isOpen, onClose }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
-    // Close modal after submission
-    onClose();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Check if access key is available
+      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      if (!accessKey) {
+        console.error('Web3Forms access key not found. Please check your .env file.');
+        setSubmitStatus('error');
+        return;
+      }
+
+      // Prepare data for Web3Forms API (same as ABM homepage)
+      const submissionData = {
+        "First Name": formData.firstName,
+        "Last Name": formData.lastName,
+        "Email": formData.email,
+        "Phone Number": formData.phoneNumber,
+        "Organization Name": formData.organizationName,
+        "Consultation Type": formData.consultationType,
+        "Message": formData.message,
+        "access_key": accessKey
+      };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(submissionData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+          organizationName: "",
+          consultationType: "phone",
+          message: ""
+        });
+        // Close modal after a brief success message
+        setTimeout(() => {
+          onClose();
+          setSubmitStatus(null);
+        }, 2000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -258,10 +318,38 @@ const ContactModal = ({ isOpen, onClose }) => {
               <div>
                 <button
                   type="submit"
-                  className="font-nunito bg-[#68EF78] hover:bg-green-400 text-gray-800 font-semibold py-3 px-6 rounded-full transition-colors duration-200 -mt-4"
+                  disabled={isSubmitting}
+                  className={`font-nunito py-3 px-6 rounded-full transition-colors duration-200 -mt-4 font-semibold ${
+                    isSubmitting 
+                      ? 'bg-gray-400 text-gray-700 cursor-not-allowed' 
+                      : submitStatus === 'success'
+                      ? 'bg-green-500 text-white'
+                      : submitStatus === 'error'
+                      ? 'bg-red-500 text-white'
+                      : 'bg-[#68EF78] hover:bg-green-400 text-gray-800'
+                  }`}
                 >
-                  Send Message
+                  {isSubmitting 
+                    ? 'Sending...' 
+                    : submitStatus === 'success'
+                    ? 'Message Sent!'
+                    : submitStatus === 'error'
+                    ? 'Failed to Send'
+                    : 'Send Message'
+                  }
                 </button>
+                
+                {/* Status Messages */}
+                {submitStatus === 'success' && (
+                  <p className="text-green-600 text-sm mt-2">
+                    Thank you! Your message has been sent successfully.
+                  </p>
+                )}
+                {submitStatus === 'error' && (
+                  <p className="text-red-600 text-sm mt-2">
+                    Sorry, there was an error sending your message. Please try again.
+                  </p>
+                )}
               </div>
             </form>
 

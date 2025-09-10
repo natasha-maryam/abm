@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import AboutUs from "./sections/AboutUs";
 import BusinessCredit from "./sections/BusinessCredit";
 import CustomerRetention from "./sections/CustomerRetention";
@@ -6,6 +7,7 @@ import GrowthMatrix from "./sections/GrowthMatrix";
 import HeroSection from "./sections/HeroSection";
 import NextStep from "./sections/NextStep";
 import Reputation from "./sections/Reputation";
+import YouthProgram from "./sections/YouthProgram";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <Reputation />
       <FlexibleApproach/>
       <NextStep/>
+      <YouthProgram/>
+      <Footer/>
       <br />
     </div>
   );

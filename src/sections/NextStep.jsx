@@ -8,7 +8,7 @@ import arrow from "../assets/images/arrow_outward.svg";
 
 function NextStep(props) {
   return (
-    <div className="w-full bg-[#511B29] min-h-[50vh] -mt-4 ">
+    <div className="w-full bg-[#511B29] min-h-[80vh] -mt-4 ">
       <div className="flex flex-col md:items-center px-5">
         <p className="hidden md:flex font-medium text-[30px] md:text-[52px] font-clash text-white">
           Your Next Step

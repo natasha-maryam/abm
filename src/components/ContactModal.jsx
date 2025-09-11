@@ -96,7 +96,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-30 flex items-start justify-center p-4 pt-4 md:pt-28 animate-fadeIn"
+      className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center p-4 animate-fadeIn"
       style={{ zIndex: 999999 }}
       onClick={onClose}
     >

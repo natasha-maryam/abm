@@ -6,7 +6,7 @@ function GrowthMatrix(props) {
   return (
     <div
       id="growth-matrix"
-      className="w-full mt-[-15%] md:mt-[-5%] pt-[10%] md:pt-0"
+      className="w-full mt-[-30%] md:mt-[-5%] pt-[10%] md:pt-0"
       style={{
         backgroundImage: `url(${bg})`,
         height: "auto", // define your height here
@@ -44,7 +44,7 @@ function GrowthMatrix(props) {
             className="md:w-[665px] md:h-[517px]"
           />
         </div>
-        <div className="items-start flex flex-col pt-4 sm:px-4">
+        <div className="items-start flex flex-col pt-4 px-4">
           <h2 className="text-center md:text-left font-medium text-[40px] font-clash text-black">
             Digital Marketing: Your
             <br className="hidden md:flex" /> Gateway To Growth

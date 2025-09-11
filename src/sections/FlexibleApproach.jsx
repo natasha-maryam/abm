@@ -6,7 +6,7 @@ import bg from "../assets/images/approach-bg.jpg"
 function FlexibleApproach(props) {
   return (
     <div
-      className="w-full mt-[-15%] md:mt-[-5%] pt-[10%] md:pt-0"
+      className="w-full mt-[-15%] md:mt-[-5%] pt-[25%] md:pt-0 pb-[40%] md:pb-10"
       style={{
         backgroundImage: `url(${bg})`,
         height: "auto", // define your height here
@@ -15,7 +15,7 @@ function FlexibleApproach(props) {
         backgroundPosition: "center",
       }}
     >
-      <div className="pt-[20%] sm:pt-[30%] md:pt-[16%] flex flex-col md:items-center px-5">
+      <div className="pt-[20%] sm:pt-[30%] md:pt-[26%] flex flex-col md:items-center px-5">
         <p className="hidden md:flex font-medium text-[30px] md:text-[52px] font-clash ">
           Our Flexible Approach To Success
         </p>

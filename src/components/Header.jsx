@@ -36,17 +36,17 @@ const Header = ({ onContactClick }) => {
     };
 
     if (servicesDropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('click', handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, [servicesDropdownOpen]);
 
   return (
     <>
-      <header className="w-full  mb-4 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20  md:rounded-full rounded-full">
+      <header className="w-full mb-4 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 md:rounded-full rounded-full relative z-50">
         <div className="relative flex items-center justify-between flex-wrap md:flex-nowrap">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -81,34 +81,51 @@ const Header = ({ onContactClick }) => {
               {/* Services Dropdown */}
               {servicesDropdownOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-[220px] h-[190px] bg-white/20 backdrop-blur-sm rounded-2xl  border border-white/20 p-y-1 px-2 z-50 overflow-hidden"
+                  className="absolute top-full left-0 mt-2 w-[220px] bg-white rounded-2xl border border-gray-200 p-3 shadow-lg"
+                  style={{ 
+                    zIndex: 99999,
+                    pointerEvents: 'auto',
+                    position: 'absolute'
+                  }}
                 >
-                  <div className="space-y-[8px] h-full flex flex-col justify-center">
+                  <div className="space-y-2">
                     <button
-                      className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-2 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full"
-                      style={{ cursor: 'pointer' }}
-                      onClick={() => scrollToSection('growth-matrix')}
+                      className="block bg-[#F3C387] hover:bg-[#F3C387]/80 text-gray-800 px-3 py-2 rounded text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        scrollToSection('growth-matrix');
+                      }}
                     >
                       Digital Marketing
                     </button>
                     <button
-                      className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-1.5 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full"
-                      style={{ cursor: 'pointer' }}
-                      onClick={() => scrollToSection('customer-retention')}
+                      className="block bg-[#F3C387] hover:bg-[#F3C387]/80 text-gray-800 px-3 py-2 rounded text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        scrollToSection('customer-retention');
+                      }}
                     >
                       Customer Retention
                     </button>
                     <button
-                      className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-1.5 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full"
-                      style={{ cursor: 'pointer' }}
-                      onClick={() => scrollToSection('reputation-management')}
+                      className="block bg-[#F3C387] hover:bg-[#F3C387]/80 text-gray-800 px-3 py-2 rounded text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        scrollToSection('reputation-management');
+                      }}
                     >
                       Reputation Management
                     </button>
                     <button
-                      className="block bg-[#F3C387] hover:bg-[#F3C387] text-gray-800 px-2 py-1.5 rounded-[4px] text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full"
-                      style={{ cursor: 'pointer' }}
-                      onClick={() => scrollToSection('business-credit')}
+                      className="block bg-[#F3C387] hover:bg-[#F3C387]/80 text-gray-800 px-3 py-2 rounded text-sm font-medium transition-colors duration-200 border border-[#111111]/30 text-left w-full cursor-pointer"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        scrollToSection('business-credit');
+                      }}
                     >
                       Fundraising Growth
                     </button>
@@ -118,7 +135,7 @@ const Header = ({ onContactClick }) => {
             </div>
             <button
               className="hover:text-green-300 px-2 py-1 text-center cursor-pointer"
-              onClick={() => scrollToSection('youth-program')}
+              // onClick={() => scrollToSection('youth-program')}
             >
               The Spark
             </button>
@@ -227,7 +244,7 @@ const Header = ({ onContactClick }) => {
             <div className="border-b border-white/20 pb-4">
               <button
                 className="text-white text-lg font-medium py-2 hover:text-green-300"
-                onClick={() => scrollToSection('youth-program')}
+                // onClick={() => scrollToSection('youth-program')}
               >
                 The Spark
               </button>

@@ -14,7 +14,7 @@ function CustomerRetention(props) {
         backgroundPosition: "center top",
       }}
     >
-      <div className="flex flex-col md:flex-row md:w-[85%] w-full mx-auto items-center justify-center -mt-[35%]  md:-mt-0 pt-[50%] md:pt-[20%] md:pb-[20%]">
+      <div className="flex flex-col md:flex-row md:w-[85%] w-full mx-auto items-center justify-center -mt-[35%]  md:-mt-0 pt-[65%] pb-[0%] md:pt-[20%] md:pb-[20%]">
         <div className="items-start flex flex-col pt-4 px-4">
           <h2 className="font-medium text-[40px] font-clash text-black">
             Customer Retention

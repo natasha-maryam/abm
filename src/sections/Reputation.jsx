@@ -3,7 +3,7 @@ import LeftImage from "../assets/images/reputation-1.png";
 
 function Reputation(props) {
   return (
-    <div id="reputation-management" className="w-full lg:-mt-[6.8%] bg-[#F3C387] min-h-[70vh] lg:-mt-[35%] -mt-[39%]">
+    <div id="reputation-management" className="w-full lg:-mt-[6.8%] bg-[#F3C387] min-h-[70vh] lg:-mt-[35%] -mt-[39%] reputation-section">
       <div className="flex flex-col lg:flex-row lg:w-[85%] xl:w-[80%] 2xl:w-[75%] w-full mx-auto items-center justify-center pt-[3%] lg:pt-[5%]">
         <div className="">
           <img
@@ -32,7 +32,7 @@ function Reputation(props) {
           {/* Why It's Critical Section */}
           <div className="mb-3 w-full max-w-3xl">
             <h3 className="font-clash font-medium text-[18px] text-black mb-3">
-              Why It’s Critical
+              Why It's Critical
             </h3>
             <ul className="list-disc list-inside space-y-2 text-[16px] font-nunito font-medium text-black">
               <li>

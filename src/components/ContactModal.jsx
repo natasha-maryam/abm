@@ -101,7 +101,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl  max-w-[90%] md:max-w-[60%] w-full max-h-[95vh] md:max-h-[90vh] overflow-y-auto shadow-2xl transform animate-slideUp"
+        className="bg-white rounded-2xl max-w-[90%] md:max-w-[60%] w-full max-h-[95vh] md:max-h-[90vh] overflow-y-auto shadow-2xl transform animate-slideUp contact-modal-container"
         style={{ zIndex: 1000000 }}
         onClick={(e) => e.stopPropagation()}
       >

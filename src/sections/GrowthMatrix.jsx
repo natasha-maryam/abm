@@ -6,7 +6,7 @@ function GrowthMatrix(props) {
   return (
     <div
       id="growth-matrix"
-      className="w-full mt-[-30%] lg:mt-[-5%] pt-[30%] lg:pt-0"
+      className="w-full mt-[-30%] lg:mt-[-5%] pt-[30%] lg:pt-0 growth-matrix-section"
       style={{
         backgroundImage: `url(${bg})`,
         height: "auto", // define your height here
@@ -15,7 +15,7 @@ function GrowthMatrix(props) {
         backgroundPosition: "center",
       }}
     >
-      <div className="pt-[100%] sm:pt-[40%] lg:pt-[21%] flex flex-col lg:items-center px-5">
+      <div className="pt-[100%] sm:pt-[40%] lg:pt-[21%] flex flex-col lg:items-center px-5 growth-matrix-heading">
         <p className="hidden lg:flex font-bold text-[30px] lg:text-[52px] xl:text-[60px] 2xl:text-[72px] font-nunito bg-gradient-to-r from-[#B84F6A] to-[#511B29] bg-clip-text text-transparent drop-shadow-[2px_2px_4px_rgba(0,0,0,0.5)]">
           The Growth Matrix: Four Forces That
         </p>
@@ -44,7 +44,7 @@ function GrowthMatrix(props) {
             className="lg:w-[665px] lg:h-[517px]"
           />
         </div>
-        <div className="items-start flex flex-col pt-4 px-4">
+        <div className="items-start flex flex-col pt-4 px-4 digital-marketing-content">
           <h2 className="text-center lg:text-left font-medium text-[40px] xl:text-[48px] 2xl:text-[56px] font-clash text-black">
             Digital Marketing: Your
             <br className="hidden lg:flex" /> Gateway To Growth

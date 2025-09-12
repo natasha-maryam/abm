@@ -19,10 +19,21 @@ const Header = ({ onContactClick }) => {
     setTimeout(() => {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
+        // Special handling for About Us section to scroll more
+        if (sectionId === 'about-us') {
+          const elementTop = element.offsetTop;
+          const offsetPosition = elementTop + 100; // Scroll 200px more than the element top
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        } else {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+          });
+        }
       }
     }, 50);
   };
@@ -46,7 +57,7 @@ const Header = ({ onContactClick }) => {
 
   return (
     <>
-      <header className="w-full mb-4 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 md:rounded-full rounded-full relative z-50">
+      <header className="w-full mb-4 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 md:rounded-full rounded-full relative ">
         <div className="relative flex items-center justify-between flex-wrap md:flex-nowrap">
           {/* Logo */}
           <div className="flex-shrink-0">

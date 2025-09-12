@@ -33,27 +33,26 @@ const HeroSection = () => {
         }}
       >
         <Header onContactClick={openModalFromHeader} />
-        <section className="w-full   py-14 pb-5 md:pb-32 relative">
+        <section className="w-full   py-14 pb-5 lg:pb-32 relative">
           {/* White Opacity Circle */}
-          <div className="hidden md:block absolute top-[54px] right-[600px] w-[100px] h-[100px] bg-white/10 rounded-full z-0 border border-white/20"></div>
+          <div className="hidden lg:block absolute top-[54px] right-[600px] w-[100px] h-[100px] bg-white/10 rounded-full z-0 border border-white/20"></div>
 
           {/* Three Headings in Column */}
-          <div className="md:space-y-4 md:mb-0 max-w-4xl relative z-10">
-            <h1 className="h-14 text-[32px] sm:text-[44px] md:text-[52px] font-nunito font-bold text-black leading-tight">
-              We Create Guaranteed Business
-            </h1>
-            <h1 className="h-14 text-[32px] sm:text-[44px] md:text-[52px] font-nunito font-bold text-black leading-tight">
+          <div className="lg:space-y-4 mb-24 sm:mb-16 lg:mb-20 xl:mb-40 max-w-4xl xl:max-w-5xl 2xl:max-w-6xl relative z-10">
+            <h1 className="h-14 text-[30px] sm:text-[44px] lg:text-[52px] xl:text-[60px] 2xl:text-[72px] font-nunito font-bold text-black leading-tight">
+              We Create Guaranteed Business &nbsp;
+<br className="hidden lg:flex"/>
               Success & Growth
             </h1>
           </div>
 
           {/* Content and Images Area */}
-          <div className="flex flex-col md:flex-row items-start md:items-end gap-3 md:gap-[22.5px] md:mt-6">
+          <div className="flex flex-col lg:flex-row items-start lg:items-end gap-3 lg:gap-[22.5px] lg:mt-6">
             {/* Left Content Area */}
             <div className="flex-1">
               {/* Paragraph */}
               <p
-                className="text-[16px] sm:text-[18px] font-nunito rounded mb-4 font-medium"
+                className="text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px] font-nunito rounded mb-4 font-medium"
                 style={{ lineHeight: "1.8" }}
               >
                 In today's competitive marketplace, businesses that thrive don't
@@ -67,14 +66,14 @@ const HeroSection = () => {
               </p>
 
               {/* Button and Small Image */}
-              <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-2 md:gap-6">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start lg:justify-between gap-6 sm:gap-20 lg:gap-6 xl:gap-8">
                 <button
                   type="button"
                   onClick={openModalFromGetStarted}
-                  className="flex items-center bg-[#68EF78] hover:bg-[#68EF78] text-[#1D1B1D] text-[16px] font-semibold px-4 py-3 rounded-full font-nunito max-w-[180px] w-full sm:w-auto"
+                  className="flex items-center bg-[#68EF78] hover:bg-[#68EF78] text-[#1D1B1D] text-[16px] lg:text-[18px] font-semibold px-4 py-2 lg:px-6 lg:py-2 rounded-full font-nunito max-w-[180px] lg:max-w-[220px] w-full sm:w-auto"
                 >
                   <span className="pl-2">Get Started</span>
-                  <div className="flex items-center justify-center bg-white rounded-full w-10 h-10 ml-3">
+                  <div className="flex items-center justify-center bg-white rounded-full w-10 h-10 lg:w-12 lg:h-12 ml-3">
                     <img src={arrow} alt="Arrow Icon" />
                   </div>
                 </button>
@@ -90,7 +89,7 @@ const HeroSection = () => {
             </div>
 
             {/* Right Images Area */}
-            <div className="flex md:flex-row flex-col flex-wrap mb-[100%] md:mb-0 md:flex-nowrap items-center md:items-end space-x-0 md:space-x-6 gap-6 md:gap-0 w-full md:w-auto">
+            <div className="flex lg:flex-row flex-col flex-wrap mb-[100%] sm:mb-[30%] lg:mb-0 lg:flex-nowrap items-center lg:items-end space-x-0 lg:space-x-6 xl:space-x-8 gap-6 lg:gap-0 xl:gap-8 w-full lg:w-auto">
               {/* Medium Image */}
               <div className=" h-auto rounded-[16.54px] flex-shrink-0">
                 <img
@@ -103,7 +102,7 @@ const HeroSection = () => {
               {/* Large Image */}
               <div className="relative  h-auto rounded-[16.54px] flex-shrink-0">
                 {/* White dots placeholder */}
-                <div className="absolute -top-6 -right-4 w-[60px] h-[50px] md:w-[103px] md:h-[84px] rounded z-0 pointer-events-none select-none">
+                <div className="absolute -top-6 -right-4 w-[60px] h-[50px] lg:w-[103px] lg:h-[84px] rounded z-0 pointer-events-none select-none">
                   <img src={dots} alt="Decorative Dots" />
                 </div>
                 <img

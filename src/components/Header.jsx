@@ -57,7 +57,7 @@ const Header = ({ onContactClick }) => {
 
   return (
     <>
-      <header className="w-full mb-4 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 md:rounded-full rounded-full relative ">
+      <header className="w-full mb-4 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 md:rounded-full rounded-full relative md:z-50 ">
         <div className="relative flex items-center justify-between flex-wrap md:flex-nowrap">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -92,7 +92,7 @@ const Header = ({ onContactClick }) => {
               {/* Services Dropdown */}
               {servicesDropdownOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-[220px] bg-white rounded-2xl border border-gray-200 p-3 shadow-lg"
+                  className="absolute top-full left-0 mt-2 w-[220px] bg-white/30 rounded-2xl border border-gray-200 p-3 shadow-lg"
                   style={{ 
                     zIndex: 99999,
                     pointerEvents: 'auto',

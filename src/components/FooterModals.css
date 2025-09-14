@@ -92,6 +92,22 @@
     transform: scale(1.1);
 }
 
+@media (max-width: 1024px) {
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        min-height: 50px;
+        padding: 0;
+    }
+    .modal-close img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+
 .modal-content {
     width: 100%;
     margin: auto;

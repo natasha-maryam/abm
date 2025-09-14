@@ -2,6 +2,7 @@ import React, { useEffect, useImperativeHandle, forwardRef } from 'react';
 import './FooterModals.css';
 import greenTick from '../assets/images/green-tick.svg';
 import circleGradient from '../assets/images/circle-gradient.svg';
+import close from "../assets/images/close-modal.svg"
 
 const FooterModals = forwardRef((props, ref) => {
 
@@ -24,8 +25,8 @@ const FooterModals = forwardRef((props, ref) => {
         <div class="modal-overlay" id="${id}">
           <div class="modal">
             <div class="close-modal-sticky">
-              <button class="modal-close" id="close${id}">
-                <img src="/src/assets/images/close-modal.svg" alt="close modal">
+              <button class="modal-close" id="close${id}" type="button">
+                <img src="${close}" alt="close modal">
               </button>
             </div>
             <div class="modal-header terms-header">

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import closeModal from "../assets/images/close-modal.svg";
 import arrow from "../assets/images/arrow_outward.svg";
 import logo from "../assets/images/logo.png";
 
@@ -57,7 +58,7 @@ const Header = ({ onContactClick }) => {
 
   return (
     <>
-      <header className="w-full mb-4 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 md:rounded-full rounded-full relative md:z-50 ">
+      <header className="w-[90%] px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 md:rounded-full rounded-full fixed top-4 left-1/2 transform -translate-x-1/2 md:z-50">
         <div className="relative flex items-center justify-between flex-wrap md:flex-nowrap">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -192,9 +193,11 @@ const Header = ({ onContactClick }) => {
           <div className="flex justify-end p-4">
             <button
               onClick={() => setMenuOpen(false)}
-              className="text-white text-2xl hover:text-green-300"
+              className="modal-close"
+              aria-label="Close menu"
+              type="button"
             >
-              ✖
+              <img src={closeModal} alt="close menu" style={{ width: '24px', height: '24px' }} />
             </button>
           </div>
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import closeModal from "../assets/images/close-modal.svg";
 import businessImage from "../assets/images/contact.svg"; // Using an existing business image
 import call from "../assets/images/call-black.png"
 
@@ -139,10 +140,11 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
             <div className="flex justify-end mb-4">
               <button
                 onClick={onClose}
-                className="text-gray-400 hover:text-gray-600 text-2xl"
+                className="modal-close"
                 aria-label="Close modal"
+                type="button"
               >
-                ×
+                <img src={closeModal} alt="close modal" style={{ width: '24px', height: '24px' }} />
               </button>
             </div>
 

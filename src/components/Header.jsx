@@ -75,7 +75,7 @@ const Header = ({ onContactClick }) => {
 
   return (
     <>
-      <header className={`w-[90%] px-4 py-3 backdrop-blur-sm border border-white/20 md:rounded-full rounded-full fixed top-4 left-1/2 transform -translate-x-1/2 md:z-50 transition-colors duration-300 ${
+      <header className={`w-[90%] px-4 py-3 backdrop-blur-sm border border-white/20 md:rounded-full rounded-full fixed top-4 left-1/2 transform -translate-x-1/2 z-[9999] transition-colors duration-300 ${
         isScrolled ? 'bg-[#2d2d2d]' : 'bg-white/10'
       }`}>
         <div className="relative flex items-center justify-between flex-wrap md:flex-nowrap">

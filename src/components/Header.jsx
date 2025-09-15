@@ -7,6 +7,7 @@ const Header = ({ onContactClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesExpanded, setMobileServicesExpanded] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const dropdownRef = useRef(null);
 
   // Handle smooth scrolling to sections
@@ -56,14 +57,36 @@ const Header = ({ onContactClick }) => {
     };
   }, [servicesDropdownOpen]);
 
+  // Handle scroll to change header background
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Handle logo click to refresh and redirect to home
+  const handleLogoClick = () => {
+    window.location.href = '/';
+  };
+
   return (
     <>
-      <header className="w-[90%] px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 md:rounded-full rounded-full fixed top-4 left-1/2 transform -translate-x-1/2 md:z-50">
+      <header className={`w-[90%] px-4 py-3 backdrop-blur-sm border border-white/20 md:rounded-full rounded-full fixed top-4 left-1/2 transform -translate-x-1/2 md:z-50 transition-colors duration-300 ${
+        isScrolled ? 'bg-[#2d2d2d]' : 'bg-white/10'
+      }`}>
         <div className="relative flex items-center justify-between flex-wrap md:flex-nowrap">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <button 
+            onClick={handleLogoClick}
+            className="flex-shrink-0 focus:outline-none hover:opacity-80 transition-opacity duration-200"
+            aria-label="Go to homepage"
+          >
             <img src={logo} alt="ABM Logo" className="h-10 w-auto" />
-          </div>
+          </button>
 
           {/* Hamburger button on mobile */}
           <button

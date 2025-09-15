@@ -10,7 +10,11 @@ function AboutUs(props) {
         {/* Main content area with image and text overlay */}
         <div className="relative">
           {/* Background image positioned on the right */}
-          <div className="absolute right-0 top-0 w-full sm:w-[60%] md:w-[50%] h-[500px] sm:h-[600px] md:h-[688px]">
+               {/* <h2 className="text-2xl sm:text-3xl md:text-[40px] font-medium text-[#1D1B1D] font-clash mb-0 text-center md:text-left">
+            About Us
+          </h2> */}
+          
+          <div className="absolute right-0 top-[50px] w-full sm:w-[60%] md:w-[50%] h-[500px] sm:h-[600px] md:h-[688px]">
             <img
               src={aboutImage}
               alt="Team celebrating"

@@ -78,21 +78,21 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
       if (result.success) {
         setSubmitStatus("success");
         // Reset form
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phoneNumber: "",
-          organizationName: "",
-          consultationType: "phone",
-          serviceType: "",
-          message: "",
-        });
-        // Close modal after a brief success message
-        setTimeout(() => {
-          onClose();
-          setSubmitStatus(null);
-        }, 2000);
+        // setFormData({
+        //   firstName: "",
+        //   lastName: "",
+        //   email: "",
+        //   phoneNumber: "",
+        //   organizationName: "",
+        //   consultationType: "phone",
+        //   serviceType: "",
+        //   message: "",
+        // });
+        // // Close modal after a brief success message
+        // setTimeout(() => {
+        //   onClose();
+        //   setSubmitStatus(null);
+        // }, 2000);
       } else {
         setSubmitStatus("error");
       }

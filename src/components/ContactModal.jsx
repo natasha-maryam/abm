@@ -42,6 +42,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
     try {
       // Check if access key is available
       const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      console.log("key", VITE_WEB3FORMS_ACCESS_KEY)
       if (!accessKey) {
         console.error(
           "Web3Forms access key not found. Please check your .env file."

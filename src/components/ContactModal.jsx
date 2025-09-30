@@ -43,13 +43,13 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
       // Check if access key is available
       const accessKey =  "bcb0d141-4746-497f-8a56-ce72459aec71";
       // console.log("key", accessKey)
-      if (!accessKey) {
-        console.error(
-          "Web3Forms access key not found. Please check your .env file."
-        );
-        setSubmitStatus("error");
-        return;
-      }
+      // if (!accessKey) {
+      //   console.error(
+      //     "Web3Forms access key not found. Please check your .env file."
+      //   );
+      //   setSubmitStatus("error");
+      //   return;
+      // }
 
       // Prepare data for Web3Forms API (same as ABM homepage)
       const submissionData = {

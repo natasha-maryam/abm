@@ -41,7 +41,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
 
     try {
       // Check if access key is available
-      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "bcb0d141-4746-497f-8a56-ce72459aec71";
+      const accessKey =  "bcb0d141-4746-497f-8a56-ce72459aec71";
       // console.log("key", accessKey)
       if (!accessKey) {
         console.error(

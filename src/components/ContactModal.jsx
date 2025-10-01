@@ -16,6 +16,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
     consultationType: "phone",
     serviceType: "",
     message: "",
+    smsConsent: "", // <-- new
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -41,7 +42,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
 
     try {
       // Check if access key is available
-      const accessKey =  "bcb0d141-4746-497f-8a56-ce72459aec71";
+      const accessKey = "bcb0d141-4746-497f-8a56-ce72459aec71";
       // console.log("key", accessKey)
       // if (!accessKey) {
       //   console.error(
@@ -60,6 +61,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
         "Organization Name": formData.organizationName,
         "Consultation Type": formData.consultationType,
         "Service Type": formData.serviceType,
+        "SMS Consent": formData.smsConsent, // <-- added
         Message: formData.message,
         access_key: accessKey,
       };
@@ -568,9 +570,13 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={1}
-                  className="w-full px-3 py-2 border-b  border-b-[2px] border-[#8D8D8D] focus:border-green-500 focus:outline-none bg-transparent resize-none"
+                  maxLength={500} // <-- added
+                  className="w-full px-3 py-2 border-b border-b-[2px] border-[#8D8D8D] focus:border-green-500 focus:outline-none bg-transparent resize-none"
                   placeholder=""
                 />
+                <p className="text-sm text-gray-500 mt-1">
+                  {formData.message.length}/500 characters
+                </p>
               </div>
 
               {/* Privacy Policy Section (above Send Message button) */}
@@ -585,6 +591,8 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                       type="radio"
                       name="smsConsent"
                       value="all"
+                      checked={formData.smsConsent === "all"}
+                      onChange={handleInputChange}
                       className="peer sr-only"
                     />
 
@@ -626,7 +634,9 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                     <input
                       type="radio"
                       name="smsConsent"
-                      value="aboveTypes"
+                      value="all"
+                      checked={formData.smsConsent === "all"}
+                      onChange={handleInputChange}
                       className="peer sr-only"
                     />
 
@@ -653,7 +663,9 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                     <input
                       type="radio"
                       name="smsConsent"
-                      value="none"
+                      value="all"
+                      checked={formData.smsConsent === "all"}
+                      onChange={handleInputChange}
                       className="peer sr-only"
                     />
 
@@ -738,7 +750,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
           </div>
         </div>
       </div>
-      
+
       {/* Footer Modals for Privacy Policy */}
       <FooterModals ref={modalsRef} />
     </div>

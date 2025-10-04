@@ -89,6 +89,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
           consultationType: "phone",
           serviceType: "",
           message: "",
+          smsConsent: "", // Reset SMS consent
         });
         // Close modal after a brief success message
         setTimeout(() => {
@@ -121,7 +122,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
       >
         <div className="flex">
           {/* Left side - Image */}
-          <div className="hidden md:block w-1/2 rounded-l-2xl p-0 flex-shrink-0 relative overflow-hidden">
+          <div className="contact-modal-image w-1/2 rounded-l-2xl p-0 flex-shrink-0 relative overflow-hidden">
             <div className="h-full flex flex-col items-center justify-between p-8">
               {/* Business image area */}
               <div className="flex-1 flex items-center justify-center relative">
@@ -148,7 +149,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
           </div>
 
           {/* Right side - Form */}
-          <div className="w-full md:w-1/2 p-8">
+          <div className="contact-modal-form w-full xl:w-1/2 p-8">
             {/* Close button */}
             <div className="flex justify-end mb-4">
               <button
@@ -590,8 +591,8 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                     <input
                       type="radio"
                       name="smsConsent"
-                      value="all"
-                      checked={formData.smsConsent === "all"}
+                      value="full_consent"
+                      checked={formData.smsConsent === "full_consent"}
                       onChange={handleInputChange}
                       className="peer sr-only"
                     />
@@ -634,8 +635,8 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                     <input
                       type="radio"
                       name="smsConsent"
-                      value="all"
-                      checked={formData.smsConsent === "all"}
+                      value="partial_consent"
+                      checked={formData.smsConsent === "partial_consent"}
                       onChange={handleInputChange}
                       className="peer sr-only"
                     />
@@ -663,8 +664,8 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                     <input
                       type="radio"
                       name="smsConsent"
-                      value="all"
-                      checked={formData.smsConsent === "all"}
+                      value="no_consent"
+                      checked={formData.smsConsent === "no_consent"}
                       onChange={handleInputChange}
                       className="peer sr-only"
                     />

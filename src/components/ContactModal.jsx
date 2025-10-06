@@ -16,7 +16,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
     consultationType: "phone",
     serviceType: "",
     message: "",
-    smsConsent: "", // <-- new
+    smsConsent: "full_consent", // <-- automatically selected
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,6 +37,13 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Check if SMS consent is selected
+    if (!formData.smsConsent) {
+      alert("Please agree to receive text messages from ABM to continue.");
+      return;
+    }
+    
     setIsSubmitting(true);
     setSubmitStatus(null);
 
@@ -89,7 +96,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
           consultationType: "phone",
           serviceType: "",
           message: "",
-          smsConsent: "", // Reset SMS consent
+          smsConsent: "full_consent", // Keep consent selected on reset
         });
         // Close modal after a brief success message
         setTimeout(() => {
@@ -595,6 +602,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                       checked={formData.smsConsent === "full_consent"}
                       onChange={handleInputChange}
                       className="peer sr-only"
+                      required
                     />
 
                     <span
@@ -631,7 +639,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                     </div>
                   </label>
 
-                  <label className="flex items-start gap-2 cursor-pointer">
+                  {/* <label className="flex items-start gap-2 cursor-pointer">
                     <input
                       type="radio"
                       name="smsConsent"
@@ -686,7 +694,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                         No, I do not want to receive text messages from ABM.
                       </p>
                     </div>
-                  </label>
+                  </label> */}
 
                   <span className="text-[14px] mt-2 font-dm text-[#666666]">
                     See our{" "}

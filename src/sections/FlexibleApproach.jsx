@@ -34,7 +34,7 @@ function FlexibleApproach(props) {
         <div className="items-center lg:items-start flex flex-col pt-2 px-4 lg:px-0 order-2 lg:order-1 w-full sm:w-auto">
           <h2 className="font-medium text-[32px] sm:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[56px] font-clash text-black text-center lg:text-left">#01</h2>
           <h2 className="font-medium text-[32px] sm:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[56px] font-clash text-black mb-2 -mt-1 text-center lg:text-left">
-            Comprehensive Growth Plan
+            Integrated Growth Plan
           </h2>
           <p className="text-[14px] sm:text-[15px] lg:text-[16px] font-nunito text-[#1D1B1D] mb-[18px] leading-relaxed font-medium max-w-2xl text-center lg:text-left">
             We can help you implement and optimize all four pillars

@@ -14,7 +14,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
     phoneNumber: "",
     organizationName: "",
     consultationType: "phone",
-    serviceType: "",
+    serviceType: [], // Changed to array for multiple selections
     message: "",
     smsConsent: "full_consent", // <-- automatically selected
   });
@@ -29,10 +29,22 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    
+    if (name === "serviceType") {
+      // Handle multiple service selection with radio button styling
+      setFormData((prev) => ({
+        ...prev,
+        serviceType: prev.serviceType.includes(value)
+          ? prev.serviceType.filter(service => service !== value) // Remove if already selected
+          : [...prev.serviceType, value] // Add if not selected
+      }));
+    } else {
+      // Handle other form fields normally
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -67,7 +79,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
         "Phone Number": formData.phoneNumber,
         "Organization Name": formData.organizationName,
         "Consultation Type": formData.consultationType,
-        "Service Type": formData.serviceType,
+        "Selected Services": formData.serviceType.length > 0 ? formData.serviceType.join(", ") : "None selected",
         "SMS Consent": formData.smsConsent, // <-- added
         Message: formData.message,
         access_key: accessKey,
@@ -94,7 +106,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
           phoneNumber: "",
           organizationName: "",
           consultationType: "phone",
-          serviceType: "",
+          serviceType: [], // Reset to empty array
           message: "",
           smsConsent: "full_consent", // Keep consent selected on reset
         });
@@ -362,21 +374,20 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <label className="flex items-center cursor-pointer">
                       <input
-                        type="radio"
+                        type="button"
                         name="serviceType"
                         value="Digital Marketing"
-                        checked={formData.serviceType === "Digital Marketing"}
-                        onChange={handleInputChange}
+                        onClick={handleInputChange}
                         className="sr-only"
                       />
                       <div
                         className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                          formData.serviceType === "Digital Marketing"
+                          formData.serviceType.includes("Digital Marketing")
                             ? "bg-black border-black"
                             : "bg-gray-300 border-gray-300"
                         }`}
                       >
-                        {formData.serviceType === "Digital Marketing" && (
+                        {formData.serviceType.includes("Digital Marketing") && (
                           <svg
                             width="10"
                             height="7"
@@ -401,23 +412,20 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
 
                     <label className="flex items-center cursor-pointer">
                       <input
-                        type="radio"
+                        type="button"
                         name="serviceType"
                         value="Business Credit Growth"
-                        checked={
-                          formData.serviceType === "Business Credit Growth"
-                        }
-                        onChange={handleInputChange}
+                        onClick={handleInputChange}
                         className="sr-only"
                       />
                       <div
                         className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                          formData.serviceType === "Business Credit Growth"
+                          formData.serviceType.includes("Business Credit Growth")
                             ? "bg-black border-black"
                             : "bg-gray-300 border-gray-300"
                         }`}
                       >
-                        {formData.serviceType === "Business Credit Growth" && (
+                        {formData.serviceType.includes("Business Credit Growth") && (
                           <svg
                             width="10"
                             height="7"
@@ -442,23 +450,20 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
 
                     <label className="flex items-center cursor-pointer">
                       <input
-                        type="radio"
+                        type="button"
                         name="serviceType"
                         value="Reputation Management"
-                        checked={
-                          formData.serviceType === "Reputation Management"
-                        }
-                        onChange={handleInputChange}
+                        onClick={handleInputChange}
                         className="sr-only"
                       />
                       <div
                         className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                          formData.serviceType === "Reputation Management"
+                          formData.serviceType.includes("Reputation Management")
                             ? "bg-black border-black"
                             : "bg-gray-300 border-gray-300"
                         }`}
                       >
-                        {formData.serviceType === "Reputation Management" && (
+                        {formData.serviceType.includes("Reputation Management") && (
                           <svg
                             width="10"
                             height="7"
@@ -483,21 +488,20 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
 
                     <label className="flex items-center cursor-pointer">
                       <input
-                        type="radio"
+                        type="button"
                         name="serviceType"
                         value="Fundraising Growth"
-                        checked={formData.serviceType === "Fundraising Growth"}
-                        onChange={handleInputChange}
+                        onClick={handleInputChange}
                         className="sr-only"
                       />
                       <div
                         className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                          formData.serviceType === "Fundraising Growth"
+                          formData.serviceType.includes("Fundraising Growth")
                             ? "bg-black border-black"
                             : "bg-gray-300 border-gray-300"
                         }`}
                       >
-                        {formData.serviceType === "Fundraising Growth" && (
+                        {formData.serviceType.includes("Fundraising Growth") && (
                           <svg
                             width="10"
                             height="7"
@@ -522,16 +526,13 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
 
                     <label className="flex items-center cursor-pointer col-span-1 sm:col-span-2">
                       <input
-                        type="radio"
+                        type="button"
                         name="serviceType"
                         value="Youth Business Programs"
-                        checked={
-                          formData.serviceType === "Youth Business Programs"
-                        }
-                        onChange={handleInputChange}
+                        onClick={handleInputChange}
                         className="sr-only"
                       />
-                      <div
+                      {/* <div
                         className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
                           formData.serviceType === "Youth Business Programs"
                             ? "bg-black border-black"
@@ -558,7 +559,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                       </div>
                       <span className="ml-2 text-[14px] font-dm">
                         Youth Business Programs
-                      </span>
+                      </span> */}
                     </label>
                   </div>
                 </div>

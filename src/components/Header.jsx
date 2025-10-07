@@ -30,6 +30,17 @@ const Header = ({ onContactClick }) => {
             top: offsetPosition,
             behavior: 'smooth'
           });
+        } else if (sectionId === 'targeted-solutions') {
+          // Special handling for Targeted Solutions section to center it perfectly
+          const elementTop = element.offsetTop;
+          const windowHeight = window.innerHeight;
+          const headerHeight = 80; // Account for fixed header
+          const offsetPosition = elementTop - (windowHeight / 2) + headerHeight;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         } else {
           element.scrollIntoView({
             behavior: 'smooth',
@@ -159,7 +170,7 @@ const Header = ({ onContactClick }) => {
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        scrollToSection('business-credit');
+                        scrollToSection('targeted-solutions');
                       }}
                     >
                       Fundraising Growth
@@ -269,7 +280,7 @@ const Header = ({ onContactClick }) => {
                   </button>
                   <button
                     className="block bg-[#F3C387] text-gray-800 px-3 py-2 rounded-lg text-sm font-medium w-full text-left"
-                    onClick={() => scrollToSection('business-credit')}
+                    onClick={() => scrollToSection('targeted-solutions')}
                   >
                     Fundraising Growth
                   </button>

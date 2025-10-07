@@ -51,7 +51,7 @@ function FlexibleApproach(props) {
           />
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row lg:w-[85%] xl:w-[80%] 2xl:w-[75%] w-full mx-auto items-center justify-center pt-[1%] lg:pt-[3%] lg:pb-[17%] pb-[10%]">
+      <div id="targeted-solutions" className="flex flex-col lg:flex-row lg:w-[85%] xl:w-[80%] 2xl:w-[75%] w-full mx-auto items-center justify-center pt-[1%] lg:pt-[3%] lg:pb-[17%] pb-[10%]">
         <div className="hidden sm:block px-4 sm:px-6 lg:px-0 order-2 lg:order-1">
           <img
             src={LeftImage}

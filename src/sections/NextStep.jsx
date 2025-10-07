@@ -34,7 +34,7 @@ function NextStep({ openContactModal }) {
         </p>
         {/* Work With Us Banner */}
         <div className="mt-12 w-full max-w-6xl mx-auto">
-          <div className="bg-white rounded-[25px] py-2 md:p-3 flex items-center justify-center gap-4">
+          <div className="bg-white rounded-[25px] py-2 md:p-3 flex items-center justify-center gap-4 border border-2 border-orange-200">
             {/* Brain Icon */}
             <div className="flex-shrink-0 pl-2">
               <img src={step1} alt="Image" />
@@ -47,7 +47,7 @@ function NextStep({ openContactModal }) {
               </h3>
             </div>
           </div>
-          <div className="bg-white rounded-[25px] py-2 md:p-3 flex items-center justify-center gap-4 mt-[15px]">
+          <div className="bg-white rounded-[25px] py-2 md:p-3 flex items-center justify-center gap-4 mt-[15px] border border-2 border-orange-200">
             {/* Brain Icon */}
             <div className="flex-shrink-0 pl-2">
               <img src={step2} alt="Image" />
@@ -61,7 +61,7 @@ function NextStep({ openContactModal }) {
               </h3>
             </div>
           </div>
-          <div className="bg-white rounded-[25px] py-2 md:p-3 flex items-center justify-center gap-4 mt-[15px]">
+          <div className="bg-white rounded-[25px] py-2 md:p-3 flex items-center justify-center gap-4 mt-[15px] border border-2 border-orange-200">
             {/* Brain Icon */}
             <div className="flex-shrink-0 pl-2">
               <img src={step3} alt="Image" />

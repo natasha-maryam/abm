@@ -16,11 +16,12 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
     consultationType: "phone",
     serviceType: [], // Changed to array for multiple selections
     message: "",
-    smsConsent: "full_consent", // <-- automatically selected
+    smsConsent: "", // <-- automatically selected
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handlePrivacyClick = (e) => {
     e.preventDefault();
@@ -38,6 +39,20 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
           ? prev.serviceType.filter(service => service !== value) // Remove if already selected
           : [...prev.serviceType, value] // Add if not selected
       }));
+    } else if (name === "smsConsent") {
+      // Handle SMS consent toggle behavior
+      setFormData((prev) => ({
+        ...prev,
+        [name]: prev[name] === value ? "" : value, // Toggle: if already selected, deselect; otherwise select
+      }));
+      
+      // Clear error message when SMS consent is selected, set it when deselected
+      if (formData.smsConsent === value) {
+        // If clicking the same value (deselecting), don't clear error immediately
+      } else {
+        // If selecting, clear error
+        setErrorMessage(null);
+      }
     } else {
       // Handle other form fields normally
       setFormData((prev) => ({
@@ -52,7 +67,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
     
     // Check if SMS consent is selected
     if (!formData.smsConsent) {
-      alert("Please agree to receive text messages from ABM to continue.");
+      setErrorMessage('Please agree to receive messages from ABM to continue.')
       return;
     }
     
@@ -589,7 +604,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
               </div>
 
               {/* Privacy Policy Section (above Send Message button) */}
-              <div className="mb-4">
+              <div >
                 <div
                   role="radiogroup"
                   aria-label="SMS consent"
@@ -603,7 +618,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                       checked={formData.smsConsent === "full_consent"}
                       onChange={handleInputChange}
                       className="peer sr-only"
-                      required
+                      
                     />
 
                     <span
@@ -710,9 +725,9 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                   </span>
                 </div>
               </div>
-
+              <p className="text-red-700">{errorMessage}</p>
               {/* Submit Button */}
-              <div>
+              <div className="mt-2">
                 <button
                   type="submit"
                   disabled={isSubmitting}

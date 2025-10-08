@@ -33,7 +33,7 @@ function NextStep({ openContactModal }) {
           Work With Us For These 3 Reasons
         </p>
         {/* Work With Us Banner */}
-        <div className="mt-12 w-full max-w-6xl mx-auto">
+        <div className="mt-12 w-full max-w-4xl mx-auto">
           <div className="bg-white rounded-[25px] py-2 md:p-3 flex items-center justify-center gap-4 border border-2 border-orange-200">
             {/* Brain Icon */}
             <div className="flex-shrink-0 pl-2">

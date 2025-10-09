@@ -19,6 +19,20 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
     smsConsent: "", // <-- automatically selected
   });
 
+ const handleClose = () => {
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      organizationName: "",
+      consultationType: "phone",
+      serviceType: [], // Reset to empty array
+      message: "",
+      smsConsent: "", // Keep consent selected on reset
+    });
+    onClose();
+  };
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
   const [errorMessage, setErrorMessage] = useState(null);
@@ -30,14 +44,14 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    
+
     if (name === "serviceType") {
       // Handle multiple service selection with radio button styling
       setFormData((prev) => ({
         ...prev,
         serviceType: prev.serviceType.includes(value)
-          ? prev.serviceType.filter(service => service !== value) // Remove if already selected
-          : [...prev.serviceType, value] // Add if not selected
+          ? prev.serviceType.filter((service) => service !== value) // Remove if already selected
+          : [...prev.serviceType, value], // Add if not selected
       }));
     } else if (name === "smsConsent") {
       // Handle SMS consent toggle behavior
@@ -45,7 +59,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
         ...prev,
         [name]: prev[name] === value ? "" : value, // Toggle: if already selected, deselect; otherwise select
       }));
-      
+
       // Clear error message when SMS consent is selected, set it when deselected
       if (formData.smsConsent === value) {
         // If clicking the same value (deselecting), don't clear error immediately
@@ -64,13 +78,13 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Check if SMS consent is selected
     if (!formData.smsConsent) {
-      setErrorMessage('Please agree to receive messages from ABM to continue.')
+      setErrorMessage("Please agree to receive messages from ABM to continue.");
       return;
     }
-    
+
     setIsSubmitting(true);
     setSubmitStatus(null);
 
@@ -94,7 +108,10 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
         "Phone Number": formData.phoneNumber,
         "Organization Name": formData.organizationName,
         "Consultation Type": formData.consultationType,
-        "Selected Services": formData.serviceType.length > 0 ? formData.serviceType.join(", ") : "None selected",
+        "Selected Services":
+          formData.serviceType.length > 0
+            ? formData.serviceType.join(", ")
+            : "None selected",
         "SMS Consent": formData.smsConsent, // <-- added
         Message: formData.message,
         access_key: accessKey,
@@ -123,7 +140,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
           consultationType: "phone",
           serviceType: [], // Reset to empty array
           message: "",
-          smsConsent: "full_consent", // Keep consent selected on reset
+          smsConsent: "", // Keep consent selected on reset
         });
         // Close modal after a brief success message
         setTimeout(() => {
@@ -187,7 +204,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
             {/* Close button */}
             <div className="flex justify-end mb-4">
               <button
-                onClick={onClose}
+                onClick={()=> handleClose()}
                 className="modal-close"
                 aria-label="Close modal"
                 type="button"
@@ -435,12 +452,16 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                       />
                       <div
                         className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                          formData.serviceType.includes("Business Credit Growth")
+                          formData.serviceType.includes(
+                            "Business Credit Growth"
+                          )
                             ? "bg-black border-black"
                             : "bg-gray-300 border-gray-300"
                         }`}
                       >
-                        {formData.serviceType.includes("Business Credit Growth") && (
+                        {formData.serviceType.includes(
+                          "Business Credit Growth"
+                        ) && (
                           <svg
                             width="10"
                             height="7"
@@ -478,7 +499,9 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                             : "bg-gray-300 border-gray-300"
                         }`}
                       >
-                        {formData.serviceType.includes("Reputation Management") && (
+                        {formData.serviceType.includes(
+                          "Reputation Management"
+                        ) && (
                           <svg
                             width="10"
                             height="7"
@@ -516,7 +539,9 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                             : "bg-gray-300 border-gray-300"
                         }`}
                       >
-                        {formData.serviceType.includes("Fundraising Growth") && (
+                        {formData.serviceType.includes(
+                          "Fundraising Growth"
+                        ) && (
                           <svg
                             width="10"
                             height="7"
@@ -604,7 +629,7 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
               </div>
 
               {/* Privacy Policy Section (above Send Message button) */}
-              <div >
+              <div>
                 <div
                   role="radiogroup"
                   aria-label="SMS consent"
@@ -618,7 +643,6 @@ const ContactModal = ({ isOpen, onClose, source = "default" }) => {
                       checked={formData.smsConsent === "full_consent"}
                       onChange={handleInputChange}
                       className="peer sr-only"
-                      
                     />
 
                     <span
